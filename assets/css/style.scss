@@ -16,15 +16,31 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Bold text should be white */
+strong, b {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 /* Container & Layout */
 .wrapper {
-  max-width: 1200px;
+  width: 100%;
+  max-width: 1400px !important;
   margin: 0 auto;
   padding: 40px 60px;
 }
 
+header {
+  width: 100% !important;
+  float: none !important;
+  position: relative !important;
+  padding-bottom: 40px;
+}
+
 section {
-  max-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  float: none !important;
   padding: 0;
 }
 
