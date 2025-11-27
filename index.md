@@ -49,7 +49,7 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 ### 🤖 **EPFL Xplore - European Rover Challenge Winner**
 *Team Leader - Autonomous Navigation* | Sep 2024 - Aug 2025
 
-![Rover](ERC_win.jpg)
+<img src="ERC_win.jpg" alt="ERC Winning Rover" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
 
 **Overview:**
 Led the development of the autonomous navigation subsystem for a Mars rover that won the European Rover Challenge 2025.
@@ -91,7 +91,7 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 ### 🚗 **STM32 RTOS Autonomous Mobile Robot**
 *Academic Project* | Spring 2025
 
-![Mobile Robot](epuck_example.jpg)
+<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
 
 **Overview:**
 Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
@@ -221,8 +221,8 @@ Applied optimization and path-finding algorithms in competitive programming
 
 #### **Problem Statement**
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
-![EPFL Xplore Rover Navigation](nav2_irl.jpg)
 
+<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
 
 #### **Solution Architecture**
 
@@ -233,7 +233,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
   - LiDAR-Inertial Odometry
 - Double-Ackermann kinematics model for accurate motion prediction
 
-![SLAM output](lidar_slam.jpg)
+<img src="lidar_slam.jpg" alt="LiDAR SLAM Output" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
 
 **2. Perception System**
 - 3D Ouster LiDAR for obstacle detection and SLAM
@@ -245,7 +245,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Dynamic obstacle avoidance
 - Waypoint navigation with Pure Pursuit
 
-![Path Planning and Obstacle Detection](nav_waypoints.jpg)
+<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
 
 **4. Communication & Integration**
 - Wireless telemetry system for remote monitoring
@@ -268,9 +268,11 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 
 
 #### **Media Gallery**
-![Rover Navigation](https://via.placeholder.com/400x300?text=Autonomous+Navigation)
-![EKF Visualization](https://via.placeholder.com/400x300?text=EKF+Localization)
-![Team Photo](https://via.placeholder.com/400x300?text=Team+Victory)
+<div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
+  <img src="https://via.placeholder.com/400x300?text=Autonomous+Navigation" alt="Rover Navigation" style="width: 400px; border-radius: 12px;">
+  <img src="https://via.placeholder.com/400x300?text=EKF+Localization" alt="EKF Visualization" style="width: 400px; border-radius: 12px;">
+  <img src="https://via.placeholder.com/400x300?text=Team+Victory" alt="Team Photo" style="width: 400px; border-radius: 12px;">
+</div>
 
 ---
 
@@ -342,27 +344,6 @@ State vector: [x, y, θ, v_x, v_y, ω]
 - Wheel encoders for odometry
 - IMU for orientation
 <!-- TODO: Add image -->
-
----
-
-## Blog & Technical Writing
-
-### Recent Posts
-
-📝 **Building a Mars Rover: Lessons from ERC 2025**
-*Published: August 2025*
-Key takeaways from winning the European Rover Challenge...
-[Read More →](#)
-
-📝 **Sensor Fusion for Mobile Robots: A Practical Guide**
-*Published: June 2025*
-Implementing Extended Kalman Filters for robust localization...
-[Read More →](#)
-
-📝 **From Design to Reality: 3D Printing a Robotic Arm**
-*Published: November 2025*
-Mechanical considerations and lessons learned...
-[Read More →](#)
 
 ---
 
