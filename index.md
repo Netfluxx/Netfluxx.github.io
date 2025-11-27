@@ -561,6 +561,7 @@ Built on ChibiOS RTOS with prioritized tasks:
 
 <a name="project-assembleur"></a>
 ### **AVR Assembly Project**
+- AVR Assembly Code
 - LCD, Keypad, Stepper Motor and distance sensor integration
 
 
