@@ -3,7 +3,7 @@
     <h1 style="margin: 0;">Arno Laurie</h1>
     <h2 style="margin-top: 0.5em; margin-bottom: 1em;">Robotics Engineer</h2>
     <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-      <a href="mailto:arno.laurie.pro@gmail.com"><img src="https://img.shields.io/badge/Email-example%40gmail.com-blue" alt="Email"></a>
+      <a href="mailto:arno.laurie.pro@gmail.com"><img src="https://img.shields.io/badge/Email-arno.laurie.pro%40gmail.com-blue" alt="Email"></a>
       <a href="https://ch.linkedin.com/in/arno-laurie-816a73229"><img src="https://img.shields.io/badge/LinkedIn-Profile-0077B5" alt="LinkedIn"></a>
       <a href="https://github.com/Netfluxx"><img src="https://img.shields.io/badge/GitHub-Netfluxx-181717" alt="GitHub"></a>
     </div>
