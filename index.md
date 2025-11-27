@@ -222,7 +222,7 @@ Applied optimization and path-finding algorithms in competitive programming
 #### **Problem Statement**
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
 
-<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
+<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="width: 100%; max-width: 600px; max-height: 800px: border-radius: 15px; margin: 20px 0;">
 
 #### **Solution Architecture**
 
