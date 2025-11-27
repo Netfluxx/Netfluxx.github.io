@@ -333,18 +333,6 @@ Built on ChibiOS RTOS with prioritized tasks:
 3. **Medium Priority:** EKF localization
 4. **Low Priority:** Map creation using detected obstacles
 
-#### **Extended Kalman Filter Implementation**
-State vector: [x, y, θ, v_x, v_y, ω]
-- Position (x, y)
-- Orientation (θ)
-- Linear velocities (v_x, v_y)
-- Angular velocity (ω)
-
-**Sensor Fusion:**
-- Wheel encoders for odometry
-- IMU for orientation
-<!-- TODO: Add image -->
-
 ---
 
 <a name="project-horloge"></a>
