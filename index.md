@@ -155,17 +155,13 @@ Developed ROS2-based manual and autonomous navigation system:
 ### **ETML - Machining Intern**
 *Aug 2024*
 
-Gained hands-on manufacturing experience in:
-- Manual metal machining (turning, milling, drilling)
-- Precision operations (sawing, tapping, brazing)
-- Manufacturing best practices
-
+Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
 ---
 
 ## Technical Skills
 
 ### **Programming Languages**
-`C++` `Python` `C` `MATLAB`
+`C++` `Python` `MATLAB`
 
 ### **Robotics Frameworks**
 `ROS2` `Nav2` `MoveIt` `Gazebo` `OpenCV`
@@ -177,7 +173,7 @@ Gained hands-on manufacturing experience in:
 `Arduino` `STM32` `ESP32` `FreeRTOS` `ChibiOS` `maxon EPOS`
 
 ### **Electronics & Hardware**
-`KiCad` `PCB Design` `Motor Control` `Actuators`
+`KiCad` `Motor Control`
 
 ### **Tools & Platforms**
 `Docker` `Linux` `Git` `Simulink` `Fusion 360` `Notion`
@@ -187,7 +183,7 @@ Gained hands-on manufacturing experience in:
 ## Competitions & Awards
 
 ### 🏆 **European Rover Challenge 2025 - Winner**
-Led autonomous navigation team to victory in international Mars rover competition
+Led autonomous navigation team, which helped our team earn the 1st place in the international Mars rover competition ERC.
 
 ### 🥈 **Luxembourg Informatics Olympiad - Semi-Finalist**
 Applied optimization and path-finding algorithms in competitive programming
@@ -205,7 +201,7 @@ Applied optimization and path-finding algorithms in competitive programming
 
 ## Interests & Hobbies
 
-🧗 Climbing | 🏂 Snowboarding | 🎸 Electric Guitar | ⛵ Sailing
+🧗 Rock Climbing | 🏂 Snowboarding | 🎸 Electric Guitar | ⛵ Sailing
 
 ---
 
@@ -223,75 +219,38 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Custom Extended Kalman Filter fusing:
   - IMU data (orientation, angular velocity)
   - Wheel odometry (position, velocity)
-  - GPS data (absolute positioning)
-  - Visual odometry from cameras
+  - LiDAR-Inertial Odometry
 - Double-Ackermann kinematics model for accurate motion prediction
 
 **2. Perception System**
-- 2D LiDAR for obstacle detection and mapping
+- 3D Ouster LiDAR for obstacle detection and SLAM
 - Camera-based landmark detection
-- Triangulation and trilateration for beacon localization
-- Computer vision for autonomous object recognition tasks
+- Triangulation and trilateration for landmark-base map localization
 
 **3. Planning & Control**
-- ROS2 Nav2 stack for path planning
+- ROS2 Nav2 stack for path planning: Hybrid A*
 - Dynamic obstacle avoidance
-- Waypoint navigation with GPS coordinates
-- Real-time trajectory optimization
+- Waypoint navigation with Pure Pursuit
 
 **4. Communication & Integration**
 - Wireless telemetry system for remote monitoring
-- Docker containerization for consistent deployments
-- Multi-platform support (Jetson Nano/Xavier)
-- Modular architecture for easy subsystem integration
+- Docker containerization for consistent deployments on NVIDIA Jetson
 
 #### **Results**
 - 🥇 First place in European Rover Challenge 2025
 - Successfully completed all autonomous navigation tasks
 - Demonstrated robust performance in outdoor terrain
-- Achieved sub-meter accuracy in GPS-denied environments
+- Achieved sub 15cm accuracy in GPS-denied environments
 
 #### **Technical Challenges & Solutions**
 
 | Challenge | Solution |
 |-----------|----------|
-| GPS signal loss in canyons | Integrated visual odometry and landmark-based localization |
-| Rough terrain navigation | Implemented advanced suspension control and terrain classification |
+| Localization Precision | EKF Fusion with Wheel Odometry, 9-axis IMU, LiDAR-Inertial Odometry |
 | Real-time performance | Optimized algorithms and leveraged GPU acceleration on Jetson |
 | Sensor noise and drift | Custom EKF with adaptive noise covariance |
 
-#### **Code Snippet: Extended Kalman Filter**
-```cpp
-void EKFLocalizer::predict(const Eigen::VectorXd& control_input, double dt) {
-    // State prediction using motion model
-    state_ = motionModel(state_, control_input, dt);
-    
-    // Jacobian of motion model
-    Eigen::MatrixXd F = computeJacobian(state_, control_input, dt);
-    
-    // Covariance prediction
-    covariance_ = F * covariance_ * F.transpose() + process_noise_;
-}
 
-void EKFLocalizer::update(const Eigen::VectorXd& measurement, 
-                          const Eigen::MatrixXd& H) {
-    // Innovation
-    Eigen::VectorXd y = measurement - H * state_;
-    
-    // Innovation covariance
-    Eigen::MatrixXd S = H * covariance_ * H.transpose() + measurement_noise_;
-    
-    // Kalman gain
-    Eigen::MatrixXd K = covariance_ * H.transpose() * S.inverse();
-    
-    // State update
-    state_ = state_ + K * y;
-    
-    // Covariance update
-    covariance_ = (Eigen::MatrixXd::Identity(state_.size(), state_.size()) 
-                   - K * H) * covariance_;
-}
-```
 
 #### **Media Gallery**
 ![Rover Navigation](https://via.placeholder.com/400x300?text=Autonomous+Navigation)
@@ -305,15 +264,15 @@ void EKFLocalizer::update(const Eigen::VectorXd& measurement,
 
 #### **Project Goals**
 - Design a fully 3D-printable robotic arm
+- Custom motor control library
 - Implement inverse kinematics and motion planning
 - Integrate computer vision for object manipulation
 - Create a user-friendly control interface
 
 #### **Mechanical Design**
-- 6 degrees of freedom for full workspace coverage
+- 6 degrees of freedom
 - Custom 3D-printed components in Fusion 360
-- Optimized for torque distribution and weight
-- Standard servo motor interfaces
+- Standard stepper motor interfaces
 
 #### **Software Architecture**
 ```
@@ -321,14 +280,13 @@ void EKFLocalizer::update(const Eigen::VectorXd& measurement,
 │          ROS2 Control Layer             │
 ├─────────────────────────────────────────┤
 │  MoveIt Motion Planning                 │
-│  - Inverse Kinematics (KDL)             │
+│  - Inverse Kinematics (OMPL / PILZ)     │
 │  - Collision Detection                  │
 │  - Trajectory Generation                │
 ├─────────────────────────────────────────┤
 │  Computer Vision (OpenCV)               │
 │  - Object Detection                     │
 │  - Pose Estimation                      │
-│  - Grasp Planning                       │
 ├─────────────────────────────────────────┤
 │  Hardware Interface                     │
 │  - Servo Control                        │
@@ -337,60 +295,24 @@ void EKFLocalizer::update(const Eigen::VectorXd& measurement,
 ```
 
 #### **Current Progress**
-- ✅ Mechanical design completed
-- ✅ 3D printing in progress
-- ⏳ ROS2 control package development
-- ⏳ MoveIt configuration
-- 📅 Computer vision integration (upcoming)
-
+- ✅ Custom Arduino Stepper Motor control libary
+- ✅ Motor Control through ros2 node
+- ⏳ Mechanical Design in progress
+- ⏳ Object Pose estimation using classical CV methods and DepthAnything V3
 ---
 
 <a name="project-solar-oven"></a>
 ### **Solar Tracking Solar Oven**
 
 #### **System Overview**
-Automated dual-axis sun tracking system to maximize solar energy collection for cooking applications.
+Automated dual-axis sun tracking system for cooking, with a small web app.
 
 #### **Hardware Components**
-- **Microcontroller:** ESP32 (dual-core, WiFi-enabled)
-- **Sensors:** 4x lux sensors in cardinal directions
-- **Actuators:** 2x stepper motors (azimuth & elevation)
-- **Power:** Custom DC-DC buck converter (24V → 5V/3.3V)
+- **Microcontroller:** ESP32
+- **Sensors:** 6x lux sensors in multiple directions
+- **Actuators:** 2x stepper motors (pitch & yaw)
+- **Power:** Custom PCB DC-DC buck converter (24V → 5V/3.3V)
 
-#### **Control Algorithm**
-```cpp
-void solarTracker::updatePosition() {
-    // Read lux sensors
-    float north = readLuxSensor(NORTH);
-    float south = readLuxSensor(SOUTH);
-    float east = readLuxSensor(EAST);
-    float west = readLuxSensor(WEST);
-    
-    // Calculate error signals
-    float azimuth_error = (east - west) / (east + west);
-    float elevation_error = (north - south) / (north + south);
-    
-    // PID control
-    float azimuth_output = pid_azimuth.compute(azimuth_error);
-    float elevation_output = pid_elevation.compute(elevation_error);
-    
-    // Update motor positions
-    setMotorSpeed(AZIMUTH_MOTOR, azimuth_output);
-    setMotorSpeed(ELEVATION_MOTOR, elevation_output);
-}
-```
-
-#### **PCB Design**
-- Custom buck converter for efficient power delivery
-- Integrated motor drivers
-- Sensor interface circuitry
-- Thermal management considerations
-
-#### **Performance Metrics**
-- Tracking accuracy: ±2° (target)
-- Update rate: 10 Hz
-- Power consumption: < 5W
-- Temperature increase: 150-200°C (oven interior)
 
 ---
 
@@ -406,10 +328,10 @@ e-puck 2 educational robot with:
 
 #### **Real-Time Architecture**
 Built on ChibiOS RTOS with prioritized tasks:
-1. **High Priority:** Motor control (1 kHz)
-2. **Medium Priority:** Sensor reading (100 Hz)
-3. **Medium Priority:** EKF localization (50 Hz)
-4. **Low Priority:** Path planning (10 Hz)
+1. **High Priority:** Motor control
+2. **Medium Priority:** Sensor reading
+3. **Medium Priority:** EKF localization
+4. **Low Priority:** Map creation using detected obstacles
 
 #### **Extended Kalman Filter Implementation**
 State vector: [x, y, θ, v_x, v_y, ω]
@@ -421,19 +343,7 @@ State vector: [x, y, θ, v_x, v_y, ω]
 **Sensor Fusion:**
 - Wheel encoders for odometry
 - IMU for orientation
-- Proximity sensors for obstacle detection
-
-#### **Obstacle Mapping**
-- Occupancy grid representation
-- Bayesian update of cell probabilities
-- Dynamic obstacle tracking
-- Memory-efficient implementation for embedded platform
-
-#### **Results**
-- Successfully navigated cluttered environment
-- Maintained localization accuracy within 5 cm
-- Real-time obstacle mapping at 10 Hz
-- Demonstrated robust collision avoidance
+<!-- TODO: Add image -->
 
 ---
 
