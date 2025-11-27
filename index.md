@@ -49,7 +49,7 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 ### 🤖 **EPFL Xplore - European Rover Challenge Winner**
 *Team Leader - Autonomous Navigation* | Sep 2024 - Aug 2025
 
-![Rover](https://via.placeholder.com/800x400?text=Rover+Image)
+![Rover](ERC_win.jpg)
 
 **Overview:**
 Led the development of the autonomous navigation subsystem for a Mars rover that won the European Rover Challenge 2025.
@@ -70,7 +70,7 @@ Led the development of the autonomous navigation subsystem for a Mars rover that
 ### 🦾 **Custom 6DoF Robotic Arm**
 *Personal Project* | Fall 2025 - Ongoing
 
-![Robotic Arm](https://via.placeholder.com/800x400?text=Robotic+Arm)
+<!-- ![Robotic Arm](https://via.placeholder.com/800x400?text=Robotic+Arm) -->
 
 **Overview:**
 Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with computer vision capabilities.
@@ -91,7 +91,7 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 ### 🚗 **STM32 RTOS Autonomous Mobile Robot**
 *Academic Project* | Spring 2025
 
-![Mobile Robot](https://via.placeholder.com/800x400?text=Mobile+Robot)
+![Mobile Robot](epuck_example.jpg)
 
 **Overview:**
 Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
@@ -112,7 +112,7 @@ Real-time autonomous navigation system for the e-puck 2 robot platform using Chi
 ### ☀️ **Solar Tracking Solar Oven**
 *Personal Project* | Fall 2025 - Ongoing
 
-![Solar Oven](https://via.placeholder.com/800x400?text=Solar+Oven)
+<!-- ![Solar Oven](https://via.placeholder.com/800x400?text=Solar+Oven) -->
 
 **Overview:**
 Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency through precise dual-axis control.
@@ -219,6 +219,8 @@ Applied optimization and path-finding algorithms in competitive programming
 
 #### **Problem Statement**
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
+![EPFL Xplore Rover Navigation](nav2_irl.jpg)
+
 
 #### **Solution Architecture**
 
@@ -229,6 +231,8 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
   - LiDAR-Inertial Odometry
 - Double-Ackermann kinematics model for accurate motion prediction
 
+![SLAM output](lidar_slam.jpg)
+
 **2. Perception System**
 - 3D Ouster LiDAR for obstacle detection and SLAM
 - Camera-based landmark detection
@@ -238,6 +242,8 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - ROS2 Nav2 stack for path planning: Hybrid A*
 - Dynamic obstacle avoidance
 - Waypoint navigation with Pure Pursuit
+
+![Path Planning and Obstacle Detection](nav_waypoints.jpg)
 
 **4. Communication & Integration**
 - Wireless telemetry system for remote monitoring
