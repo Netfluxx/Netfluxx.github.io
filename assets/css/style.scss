@@ -1,9 +1,14 @@
 ---
 ---
 
-@import "{{ site.theme }}";
-
 /* Modern Portfolio Design - Inspired by Figure AI / Coprod */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 /* Typography & Base Styles */
 body {
@@ -22,40 +27,51 @@ strong, b {
   font-weight: 600;
 }
 
-/* Container & Layout */
-.wrapper {
+/* Page Wrapper */
+.page-wrapper {
   width: 100%;
-  max-width: 1200px !important;
-  margin: 0 auto;
-  padding: 60px 40px;
+  min-height: 100vh;
+  padding: 60px 20px;
 }
 
-header {
+/* Content Container with Box */
+.content-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 50px 60px;
+  background: rgba(15, 15, 25, 0.6);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(139, 92, 246, 0.1);
+  backdrop-filter: blur(10px);
+}
+
+/* Remove default theme styles */
+.wrapper, header, section {
   width: 100% !important;
+  max-width: 100% !important;
   float: none !important;
   position: relative !important;
-  padding-bottom: 40px;
-  text-align: left;
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-section {
-  width: 100% !important;
-  max-width: 900px !important;
-  float: none !important;
-  padding: 40px 50px;
-  text-align: left;
-  background: rgba(139, 92, 246, 0.03);
-  border: 1px solid rgba(139, 92, 246, 0.15);
-  border-radius: 16px;
-  margin: 30px auto;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
 }
 
 /* Ensure proper text alignment throughout */
 p, ul, ol, div {
   text-align: left;
+}
+
+/* Add spacing between major sections */
+.content-container > h2 {
+  margin-top: 3em;
+}
+
+.content-container > h2:first-child,
+.content-container > h1:first-child {
+  margin-top: 0;
 }
 
 /* Header Styling */
@@ -297,8 +313,13 @@ html {
 
 /* Responsive */
 @media (max-width: 768px) {
-  .wrapper {
-    padding: 20px 30px;
+  .page-wrapper {
+    padding: 30px 15px;
+  }
+  
+  .content-container {
+    padding: 30px 25px;
+    border-radius: 16px;
   }
   
   h1 {
