@@ -1,9 +1,17 @@
-# Arno Laurie
-## Robotics Engineer
-
-[![Email](https://img.shields.io/badge/Email-example%40gmail.com-blue)](mailto:arno.laurie.pro@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5)](https://ch.linkedin.com/in/arno-laurie-816a73229)
-[![GitHub](https://img.shields.io/badge/GitHub-Netfluxx-181717)](https://github.com/Netfluxx)
+<div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 2em;">
+  <div style="flex: 1; min-width: 300px;">
+    <h1 style="margin: 0;">Arno Laurie</h1>
+    <h2 style="margin-top: 0.5em; margin-bottom: 1em;">Robotics Engineer</h2>
+    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+      <a href="mailto:arno.laurie.pro@gmail.com"><img src="https://img.shields.io/badge/Email-example%40gmail.com-blue" alt="Email"></a>
+      <a href="https://ch.linkedin.com/in/arno-laurie-816a73229"><img src="https://img.shields.io/badge/LinkedIn-Profile-0077B5" alt="LinkedIn"></a>
+      <a href="https://github.com/Netfluxx"><img src="https://img.shields.io/badge/GitHub-Netfluxx-181717" alt="GitHub"></a>
+    </div>
+  </div>
+  <div style="flex-shrink: 0;">
+    <img src="picture_of_me_xplore.jpg" alt="Arno Laurie" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; border: 3px solid rgba(139, 92, 246, 0.5); box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);">
+  </div>
+</div>
 
 ---
 
