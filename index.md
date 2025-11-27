@@ -9,7 +9,7 @@
     </div>
   </div>
   <div style="flex-shrink: 0;">
-    <img src="picture_of_me_xplore.jpg" alt="Arno Laurie" style="width: 200px; height: 200px; border-radius: 15px; object-fit: cover; border: 3px solid rgba(139, 92, 246, 0.5); box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);">
+    <img src="picture_of_me_xplore.jpg" alt="Arno Laurie" style="width: 400px; height: 400px; border-radius: 15px; object-fit: cover; border: 3px solid rgba(139, 92, 246, 0.5); box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);">
   </div>
 </div>
 
