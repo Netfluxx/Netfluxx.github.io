@@ -568,9 +568,9 @@ Built on ChibiOS RTOS with prioritized tasks:
 
 I'm always interested in discussing robotics projects, collaboration opportunities, or new challenges in autonomous systems.
 
-📧 **Email:** [example@gmail.com](mailto:example@gmail.com)
+📧 **Email:** [arno.laurie.pro@gmail.com](mailto:/arno.laurie.pro@gmail.com)
 
-🔗 **LinkedIn:** [linkedin.com/in/yourprofile](https://linkedin.com/in/yourprofile)
+🔗 **LinkedIn:** [linkedin.com/in/arno-laurie](https://ch.linkedin.com/in/arno-laurie-816a73229)
 
 💻 **GitHub:** [github.com/Netfluxx](https://github.com/Netfluxx)
 
