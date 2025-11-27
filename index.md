@@ -347,6 +347,19 @@ State vector: [x, y, θ, v_x, v_y, ω]
 
 ---
 
+<a name="project-horloge"></a>
+### **Mechanial Oscillator design with mechanical flexures**
+- insensitive to linear and angular velocities and accelerations
+- Fusion 360 CAD and Simulations
+- Material Selection
+
+---
+
+<a name="project-assembleur"></a>
+### **AVR Assembly Project**
+- LCD, Keypad, Stepper Motor and distance sensor integration
+
+
 ## Contact
 
 I'm always interested in discussing robotics projects, collaboration opportunities, or new challenges in autonomous systems.
