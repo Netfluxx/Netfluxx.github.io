@@ -35,6 +35,7 @@ header {
   float: none !important;
   position: relative !important;
   padding-bottom: 40px;
+  text-align: left;
 }
 
 section {
@@ -42,6 +43,12 @@ section {
   max-width: 100% !important;
   float: none !important;
   padding: 0;
+  text-align: left;
+}
+
+/* Ensure proper text alignment throughout */
+p, ul, ol, div {
+  text-align: left;
 }
 
 /* Header Styling */
@@ -148,10 +155,29 @@ code {
 ul, ol {
   line-height: 1.8;
   margin: 1em 0;
+  padding-left: 0;
+  list-style-position: inside;
 }
 
 li {
   margin: 0.5em 0;
+  padding-left: 0;
+}
+
+/* Custom bullet points */
+ul li {
+  list-style-type: none;
+  position: relative;
+  padding-left: 1.5em;
+}
+
+ul li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: #a78bfa;
+  font-weight: bold;
+  font-size: 1.2em;
 }
 
 /* Tables */
