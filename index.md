@@ -88,6 +88,27 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 
 ---
 
+### 🚗 **STM32 RTOS Autonomous Mobile Robot**
+*Academic Project* | Spring 2025
+
+![Mobile Robot](https://via.placeholder.com/800x400?text=Mobile+Robot)
+
+**Overview:**
+Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
+
+**Technical Highlights:**
+- Extended Kalman Filter for localization
+- Real-time obstacle detection and mapping
+- Efficient RTOS task scheduling
+- Sensor fusion with IMU and proximity sensors
+
+**Technologies:**
+`STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
+
+[View Project Details →](#project-epuck)
+
+---
+
 ### ☀️ **Solar Tracking Solar Oven**
 *Personal Project* | Fall 2025 - Ongoing
 
@@ -109,26 +130,7 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 ---
 
-### 🚗 **STM32 RTOS Autonomous Mobile Robot**
-*Academic Project* | Spring 2025
 
-![Mobile Robot](https://via.placeholder.com/800x400?text=Mobile+Robot)
-
-**Overview:**
-Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
-
-**Technical Highlights:**
-- Extended Kalman Filter for localization
-- Real-time obstacle detection and mapping
-- Efficient RTOS task scheduling
-- Sensor fusion with IMU and proximity sensors
-
-**Technologies:**
-`STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
-
-[View Project Details →](#project-epuck)
-
----
 
 ## Professional Experience
 
@@ -156,6 +158,11 @@ Developed ROS2-based manual and autonomous navigation system:
 *Aug 2024*
 
 Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
+
+### EPFL Teaching Assistant
+- EE-295 : Electrical Systems and Electronics 1
+- EE-296 : Electrical Systems and Electronics 2
+- ME-326 : Control Systems and discrete-time control
 ---
 
 ## Technical Skills
