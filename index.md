@@ -169,23 +169,231 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ## Technical Skills
 
+<div class="skills-section">
+
 ### **Programming Languages**
-`C++` `Python` `MATLAB`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">C++</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 90%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Python</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 90%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">MATLAB</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
 
 ### **Robotics Frameworks**
-`ROS2` `Nav2` `MoveIt` `Gazebo` `OpenCV`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">ROS2</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 85%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Nav2 / MoveIt</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 75%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">OpenCV</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 75%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Gazebo</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
 
 ### **Control & Estimation**
-`SLAM` `Extended Kalman Filter` `PID Control` `Sensor Fusion` `Model Predictive Control`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">SLAM</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 80%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Extended Kalman Filter</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 85%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">PID Control</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 90%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Model Predictive Control</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 65%;"></div>
+  </div>
+</div>
 
 ### **Embedded Systems**
-`Arduino` `STM32` `ESP32` `FreeRTOS` `ChibiOS` `maxon EPOS`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Arduino</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 85%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">STM32</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 75%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">ESP32</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">FreeRTOS / ChibiOS</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
 
 ### **Electronics & Hardware**
-`KiCad` `Motor Control`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">KiCad (PCB Design)</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Motor Control</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 85%;"></div>
+  </div>
+</div>
 
 ### **Tools & Platforms**
-`Docker` `Linux` `Git` `Simulink` `Fusion 360` `Notion`
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Docker</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 75%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Linux / Git</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 85%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Simulink</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 70%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
+    <span class="skill-name">Fusion 360</span>
+    <span class="skill-level">Intermediate</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 75%;"></div>
+  </div>
+</div>
+
+</div>
 
 ---
 

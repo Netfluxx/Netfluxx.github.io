@@ -348,3 +348,82 @@ section > p:last-child > em {
   font-style: normal;
   font-size: 0.9em;
 }
+
+/* Skill Bars Styling */
+.skills-section {
+  margin: 2em 0;
+}
+
+.skill-item {
+  margin-bottom: 1.8em;
+}
+
+.skill-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5em;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #f4f4f5;
+  font-size: 1em;
+}
+
+.skill-level {
+  font-size: 0.85em;
+  color: #a1a1aa;
+  font-weight: 400;
+}
+
+.skill-bar {
+  width: 100%;
+  height: 8px;
+  background: rgba(139, 92, 246, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  position: relative;
+}
+
+.skill-progress {
+  height: 100%;
+  background: linear-gradient(90deg, #a78bfa 0%, #60a5fa 100%);
+  border-radius: 10px;
+  transition: width 1s ease-out;
+  box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+  position: relative;
+  animation: slideIn 1s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    width: 0 !important;
+  }
+}
+
+.skill-progress::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skills-section h3 {
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+}
