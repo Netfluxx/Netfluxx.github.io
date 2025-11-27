@@ -217,7 +217,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 <div class="skill-item">
   <div class="skill-header">
-    <span class="skill-name">Nav2 / MoveIt</span>
+    <span class="skill-name">Nav2</span>
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
@@ -241,7 +241,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
+    <div class="skill-progress" style="width: 60%;"></div>
   </div>
 </div>
 
@@ -253,7 +253,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Advanced</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 80%;"></div>
+    <div class="skill-progress" style="width: 60%;"></div>
   </div>
 </div>
 
@@ -283,7 +283,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 65%;"></div>
+    <div class="skill-progress" style="width: 40%;"></div>
   </div>
 </div>
 
@@ -305,7 +305,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 75%;"></div>
+    <div class="skill-progress" style="width: 60%;"></div>
   </div>
 </div>
 
@@ -359,7 +359,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 75%;"></div>
+    <div class="skill-progress" style="width: 70%;"></div>
   </div>
 </div>
 
@@ -389,7 +389,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 75%;"></div>
+    <div class="skill-progress" style="width: 50%;"></div>
   </div>
 </div>
 
