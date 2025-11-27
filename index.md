@@ -49,7 +49,7 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 ### 🤖 **EPFL Xplore - European Rover Challenge Winner**
 *Team Leader - Autonomous Navigation* | Sep 2024 - Aug 2025
 
-<img src="ERC_win.jpg" alt="ERC Winning Rover" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
+<img src="ERC_win.jpg" alt="ERC Winning Rover" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
 
 **Overview:**
 Led the development of the autonomous navigation subsystem for a Mars rover that won the European Rover Challenge 2025.
@@ -91,7 +91,7 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 ### 🚗 **STM32 RTOS Autonomous Mobile Robot**
 *Academic Project* | Spring 2025
 
-<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
+<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
 
 **Overview:**
 Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
@@ -222,7 +222,7 @@ Applied optimization and path-finding algorithms in competitive programming
 #### **Problem Statement**
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
 
-<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="width: 100%; max-width: 600px; max-height: 800px: border-radius: 15px; margin: 20px 0;">
+<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
 
 #### **Solution Architecture**
 
@@ -233,7 +233,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
   - LiDAR-Inertial Odometry
 - Double-Ackermann kinematics model for accurate motion prediction
 
-<img src="lidar_slam.jpg" alt="LiDAR SLAM Output" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
+<img src="lidar_slam.jpg" alt="LiDAR SLAM Output" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
 
 **2. Perception System**
 - 3D Ouster LiDAR for obstacle detection and SLAM
@@ -245,7 +245,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Dynamic obstacle avoidance
 - Waypoint navigation with Pure Pursuit
 
-<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection" style="width: 100%; max-width: 800px; border-radius: 15px; margin: 20px 0;">
+<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
 
 **4. Communication & Integration**
 - Wireless telemetry system for remote monitoring
