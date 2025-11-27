@@ -159,10 +159,12 @@ Developed ROS2-based manual and autonomous navigation system:
 
 Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
 
-### EPFL Teaching Assistant
+### **EPFL Teaching Assistant**
 - EE-295 : Electrical Systems and Electronics 1
 - EE-296 : Electrical Systems and Electronics 2
 - ME-326 : Control Systems and discrete-time control
+
+
 ---
 
 ## Technical Skills
@@ -287,31 +289,14 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Custom 3D-printed components in Fusion 360
 - Standard stepper motor interfaces
 
-#### **Software Architecture**
-```
-┌─────────────────────────────────────────┐
-│          ROS2 Control Layer             │
-├─────────────────────────────────────────┤
-│  MoveIt Motion Planning                 │
-│  - Inverse Kinematics (OMPL / PILZ)     │
-│  - Collision Detection                  │
-│  - Trajectory Generation                │
-├─────────────────────────────────────────┤
-│  Computer Vision (OpenCV)               │
-│  - Object Detection                     │
-│  - Pose Estimation                      │
-├─────────────────────────────────────────┤
-│  Hardware Interface                     │
-│  - Servo Control                        │
-│  - Joint State Feedback                 │
-└─────────────────────────────────────────┘
-```
 
 #### **Current Progress**
 - ✅ Custom Arduino Stepper Motor control libary
 - ✅ Motor Control through ros2 node
 - ⏳ Mechanical Design in progress
 - ⏳ Object Pose estimation using classical CV methods and DepthAnything V3
+- ⏳ MoveIt Config with UR5 URDF
+
 ---
 
 <a name="project-solar-oven"></a>
