@@ -1,8 +1,8 @@
 # Arno Laurie
 ## Robotics Engineer
 
-[![Email](https://img.shields.io/badge/Email-example%40gmail.com-blue)](mailto:example@gmail.com)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5)](https://linkedin.com/in/yourprofile)
+[![Email](https://img.shields.io/badge/Email-example%40gmail.com-blue)](mailto:arno.laurie.pro@gmail.com)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Profile-0077B5)](https://ch.linkedin.com/in/arno-laurie-816a73229)
 [![GitHub](https://img.shields.io/badge/GitHub-Netfluxx-181717)](https://github.com/Netfluxx)
 
 ---
