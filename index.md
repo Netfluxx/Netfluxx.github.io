@@ -544,7 +544,8 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 | Sensor noise and drift | Custom EKF with adaptive noise covariance |
 
 <img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 700px; border-radius: 15px; margin: 20px auto;">
-
+<!-- Add text that says it was solved using convex optimization with the ECOS solver and CVXPY -->
+Solved using CVXPY and the ECOS SOCP Solver
 
 <!-- #### **Media Gallery**
 <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
