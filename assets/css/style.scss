@@ -96,16 +96,36 @@ h1 {
 }
 
 h2 {
-  font-size: 1.2em;
-  font-weight: 400;
-  color: #a1a1aa;
+  font-size: 2em;
+  font-weight: 700;
+  color: #ffffff;
+  margin-top: 3em;
+  margin-bottom: 1em;
+  letter-spacing: -0.025em;
+  position: relative;
+  padding-bottom: 0.5em;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(90deg, #a78bfa 0%, #60a5fa 100%);
+  border-radius: 2px;
+}
+
+h2:first-child {
   margin-top: 0;
-  margin-bottom: 2em;
 }
 
 h3 {
-  font-size: 1.8em;
-  margin-top: 3em;
+  font-size: 1.5em;
+  margin-top: 2.5em;
+  font-weight: 600;
+  color: #f4f4f5;
 }
 
 /* Links */
