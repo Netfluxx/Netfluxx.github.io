@@ -142,7 +142,7 @@ Real-time autonomous navigation system for the e-puck 2 robot platform using Chi
 ###  **Direction of Arrival using LibreSDR**
 *Personal Project* | Fall 2025
 
-<!-- ![Solar Oven](https://via.placeholder.com/800x400?text=Solar+Oven) -->
+<img src="libresdr.jpg" alt="SDR used for DoA" style="display: block; max-width: 400px; border-radius: 15px; margin: 20px auto;">
 
 **Overview:**
 MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
@@ -151,7 +151,7 @@ MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
 - Signal Processing
 
 **Technologies:**
-`DoA`
+`DoA` `SDR`
 <!-- [View Project Details →](#project-solar-oven) -->
 
 ---
