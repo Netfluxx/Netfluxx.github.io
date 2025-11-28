@@ -543,7 +543,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 | Real-time performance | Optimized algorithms and leveraged GPU acceleration on Jetson |
 | Sensor noise and drift | Custom EKF with adaptive noise covariance |
 
-<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 500px; border-radius: 15px; margin: 20px auto;">
+<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 700px; border-radius: 15px; margin: 20px auto;">
 
 
 <!-- #### **Media Gallery**
