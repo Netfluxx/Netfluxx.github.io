@@ -539,10 +539,11 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 
 | Challenge | Solution |
 |-----------|----------|
-| Localization Precision | EKF Fusion with Wheel Odometry, 9-axis IMU, LiDAR-Inertial Odometry |
+| Localization Precision | EKF Fusion with Wheel Odometry, 9-axis IMU, LiDAR-Inertial Odometry & Global Pose Corrections using triangulation and trilateration |
 | Real-time performance | Optimized algorithms and leveraged GPU acceleration on Jetson |
 | Sensor noise and drift | Custom EKF with adaptive noise covariance |
 
+<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 500px; border-radius: 15px; margin: 20px auto;">
 
 
 #### **Media Gallery**
