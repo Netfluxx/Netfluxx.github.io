@@ -65,8 +65,9 @@ Led the development of the autonomous navigation subsystem for a Mars rover that
 **Key Achievements:**
 - Developed custom Extended Kalman Filter for sensor fusion
 - Implemented double-Ackermann kinematics for precise control
+- Use of the Nav2 Stack
 - Applied triangulation, trilateration, and Computer Vision techniques
-- Coordinated multidisciplinary teams for hardware-software integration
+- Coordinated with multidisciplinary teams for hardware-software integration
 
 **Technologies:**
 `C++` `Python` `ROS2` `OpenCV` `Docker` `Gazebo` `Arduino` `maxon EPOS`
@@ -95,6 +96,27 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 [View Project Details →](#project-robotic-arm)
 
 ---
+### 🚗 **Thymio Autonomous Mobile Robot**
+*Academic Project* | Fall 2025
+
+<!-- <img src="epuck_example.jpg" alt="Thymio Mobile Robot" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;"> -->
+
+**Overview:**
+Real-time autonomous navigation system for the Thymio educational robot.
+
+**Technical Highlights:**
+- Extended Kalman Filter for localization
+- ArUco tag triangulation & trilateration using convex optimization
+- Real-time obstacle detection
+- Global Path Planning
+
+**Technologies:**
+`Python` `EKF` `OpenCV`
+
+<!-- [View Project Details →](#project-epuck) -->
+
+---
+
 
 ### 🚗 **STM32 RTOS Autonomous Mobile Robot**
 *Academic Project* | Spring 2025
@@ -113,7 +135,24 @@ Real-time autonomous navigation system for the e-puck 2 robot platform using Chi
 **Technologies:**
 `STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
 
-[View Project Details →](#project-epuck)
+<!-- [View Project Details →](#project-epuck) -->
+
+---
+
+###  **Direction of Arrival using LibreSDR**
+*Personal Project* | Fall 2025
+
+<!-- ![Solar Oven](https://via.placeholder.com/800x400?text=Solar+Oven) -->
+
+**Overview:**
+MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
+
+**Technical Highlights:**
+- Signal Processing
+
+**Technologies:**
+`DoA`
+<!-- [View Project Details →](#project-solar-oven) -->
 
 ---
 
