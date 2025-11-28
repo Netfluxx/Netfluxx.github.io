@@ -52,7 +52,7 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 
 ---
 
-## Featured Projects
+## Projects
 
 ### 🤖 **EPFL Xplore - European Rover Challenge Winner**
 *Team Leader - Autonomous Navigation* | Sep 2024 - Aug 2025
