@@ -546,12 +546,12 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 <img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 500px; border-radius: 15px; margin: 20px auto;">
 
 
-#### **Media Gallery**
+<!-- #### **Media Gallery**
 <div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
   <img src="https://via.placeholder.com/400x300?text=Autonomous+Navigation" alt="Rover Navigation" style="width: 400px; border-radius: 12px;">
   <img src="https://via.placeholder.com/400x300?text=EKF+Localization" alt="EKF Visualization" style="width: 400px; border-radius: 12px;">
   <img src="https://via.placeholder.com/400x300?text=Team+Victory" alt="Team Photo" style="width: 400px; border-radius: 12px;">
-</div>
+</div> -->
 
 ---
 
