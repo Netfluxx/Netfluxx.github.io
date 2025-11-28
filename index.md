@@ -177,6 +177,18 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 ---
 
+### **Mechanial Oscillator design with mechanical flexures**
+- insensitive to linear and angular velocities and accelerations
+- Fusion 360 CAD and Simulations
+- Material Selection
+
+---
+
+### **AVR Assembly Project**
+- AVR Assembly Code
+- LCD, Keypad, Stepper Motor and distance sensor integration
+
+
 
 
 ## Professional Experience
@@ -555,7 +567,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - ⏳ MoveIt Config with UR5 URDF
 
 ---
-
+<!-- 
 <a name="project-solar-oven"></a>
 ### **Solar Tracking Solar Oven**
 
@@ -588,20 +600,8 @@ Built on ChibiOS RTOS with prioritized tasks:
 3. **Medium Priority:** EKF localization
 4. **Low Priority:** Map creation using detected obstacles
 
----
+--- -->
 
-<a name="project-horloge"></a>
-### **Mechanial Oscillator design with mechanical flexures**
-- insensitive to linear and angular velocities and accelerations
-- Fusion 360 CAD and Simulations
-- Material Selection
-
----
-
-<a name="project-assembleur"></a>
-### **AVR Assembly Project**
-- AVR Assembly Code
-- LCD, Keypad, Stepper Motor and distance sensor integration
 
 
 ## Contact
