@@ -306,7 +306,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ### **Control & Estimation**
 
-<div class="skill-item">
+<!-- <div class="skill-item">
   <div class="skill-header">
     <span class="skill-name">SLAM</span>
     <span class="skill-level">Advanced</span>
@@ -314,7 +314,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   <div class="skill-bar">
     <div class="skill-progress" style="width: 60%;"></div>
   </div>
-</div>
+</div> -->
 
 <div class="skill-item">
   <div class="skill-header">
@@ -338,13 +338,24 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 <div class="skill-item">
   <div class="skill-header">
+    <span class="skill-name">Path Following</span>
+    <span class="skill-level">Advanced</span>
+  </div>
+  <div class="skill-bar">
+    <div class="skill-progress" style="width: 90%;"></div>
+  </div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header">
     <span class="skill-name">Model Predictive Control</span>
     <span class="skill-level">Intermediate</span>
   </div>
   <div class="skill-bar">
-    <div class="skill-progress" style="width: 40%;"></div>
+    <div class="skill-progress" style="width: 50%;"></div>
   </div>
 </div>
+
 
 ### **Embedded Systems**
 
