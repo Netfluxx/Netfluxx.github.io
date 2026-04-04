@@ -4,14 +4,89 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="{{ site.description }}">
+    <meta name="theme-color" content="#050510">
     <title>{{ site.title | default: site.github.repository_name }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <div class="page-wrapper">
+    <div class="bg-grid" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--2" aria-hidden="true"></div>
+    <div class="bg-glow bg-glow--3" aria-hidden="true"></div>
+
+    <nav class="nav" id="nav">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">AL<span class="nav__logo-dot">.</span></a>
+        <div class="nav__links" id="nav-links">
+          <a href="#about" class="nav__link">About</a>
+          <a href="#education" class="nav__link">Education</a>
+          <a href="#projects" class="nav__link">Projects</a>
+          <a href="#experience" class="nav__link">Experience</a>
+          <a href="#skills" class="nav__link">Skills</a>
+          <a href="#contact" class="nav__link">Contact</a>
+        </div>
+        <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <main class="page-wrapper">
       <div class="content-container">
         {{ content }}
       </div>
-    </div>
+    </main>
+
+    <script>
+    (function() {
+      var nav = document.getElementById('nav');
+      var toggle = document.getElementById('nav-toggle');
+      var links = document.getElementById('nav-links');
+
+      window.addEventListener('scroll', function() {
+        nav.classList.toggle('nav--scrolled', window.scrollY > 40);
+      });
+
+      toggle.addEventListener('click', function() {
+        links.classList.toggle('nav__links--open');
+        toggle.classList.toggle('nav__toggle--active');
+      });
+
+      links.querySelectorAll('.nav__link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          links.classList.remove('nav__links--open');
+          toggle.classList.remove('nav__toggle--active');
+        });
+      });
+
+      var sections = document.querySelectorAll('[id]');
+      var navLinks = document.querySelectorAll('.nav__link');
+      var activeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            navLinks.forEach(function(l) { l.classList.remove('nav__link--active'); });
+            var active = document.querySelector('.nav__link[href="#' + entry.target.id + '"]');
+            if (active) active.classList.add('nav__link--active');
+          }
+        });
+      }, { rootMargin: '-20% 0px -75% 0px' });
+      sections.forEach(function(s) { activeObserver.observe(s); });
+
+      var reveals = document.querySelectorAll('.reveal');
+      var revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.08 });
+      reveals.forEach(function(el) { revealObserver.observe(el); });
+    })();
+    </script>
   </body>
 </html>

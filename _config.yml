@@ -1,3 +1,9 @@
 theme: jekyll-theme-minimal
 title: Arno Laurie
-description: My journey through robotics at EPFL
+description: Robotics Engineer — EPFL | Autonomous Navigation, Sensor Fusion, ROS2
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default

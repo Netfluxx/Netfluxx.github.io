@@ -1,30 +1,53 @@
-<div style="display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; margin-bottom: 2em;">
-  <div style="flex: 1; min-width: 300px;">
-    <h1 style="margin: 0;">Arno Laurie</h1>
-    <h2 style="margin-top: 0.5em; margin-bottom: 1em;">Robotics Engineer</h2>
-    <div style="display: flex; gap: 8px; flex-wrap: wrap;">
-      <a href="mailto:arno.laurie.pro@gmail.com"><img src="https://img.shields.io/badge/Email-arno.laurie.pro%40gmail.com-blue" alt="Email"></a>
-      <a href="https://ch.linkedin.com/in/arno-laurie-816a73229"><img src="https://img.shields.io/badge/LinkedIn-Profile-0077B5" alt="LinkedIn"></a>
-      <a href="https://github.com/Netfluxx"><img src="https://img.shields.io/badge/GitHub-Netfluxx-181717" alt="GitHub"></a>
+---
+layout: default
+---
+
+<div class="hero">
+  <div class="hero__text">
+    <h1>Arno Laurie</h1>
+    <p class="hero__subtitle">Robotics Engineer</p>
+    <div class="hero__badges">
+      <a href="mailto:arno.laurie.pro@gmail.com" class="hero__badge">
+        <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        arno.laurie.pro@gmail.com
+      </a>
+      <a href="https://ch.linkedin.com/in/arno-laurie-816a73229" class="hero__badge">
+        <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/Netfluxx" class="hero__badge">
+        <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
+        Netfluxx
+      </a>
     </div>
   </div>
-  <div style="flex-shrink: 0;">
-    <img src="picture_of_me_xplore.jpg" alt="Arno Laurie" style="width: 550px; height: 550px; border-radius: 15px; object-fit: cover; border: 3px solid rgba(139, 92, 246, 0.5); box-shadow: 0 0 20px rgba(139, 92, 246, 0.3);">
+  <div class="hero__image">
+    <img src="picture_of_me_xplore.jpg" alt="Arno Laurie">
   </div>
 </div>
 
 ---
 
+<div id="about" class="section reveal">
+
 ## About Me
 
-Robotics Master's student at **EPFL** with hands-on experience in autonomous navigation, robotic arm control, real-time systems using ROS2, and sensor fusion. Proven leadership in international competitions like the **European Rover Challenge**. Passionate about solving real-world problems through interdisciplinary robotics systems.
+<p class="about-text">
+Robotics Master's student at <strong>EPFL</strong> with hands-on experience in autonomous navigation, robotic arm control, real-time systems using ROS2, and sensor fusion. Proven leadership in international competitions like the <strong>European Rover Challenge</strong>. Passionate about solving real-world problems through interdisciplinary robotics systems.
+</p>
+
+</div>
 
 ---
 
+<div id="education" class="section reveal">
+
 ## Education
 
-### **École Polytechnique Fédérale de Lausanne (EPFL)**
-*Master of Science in Robotics* | 2025 - Ongoing
+<div class="education-item">
+
+### **EPFL** --- Master of Science in Robotics
+*2025 -- Ongoing*
 
 **Relevant Coursework:**
 - Manipulation & Computer Vision
@@ -34,8 +57,12 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 - Multivariable and Non-Linear Control
 - Model Predictive Control
 
-### **École Polytechnique Fédérale de Lausanne (EPFL)**
-*Bachelor of Science in Microengineering* | **5.38/6** | 2022 - 2025
+</div>
+
+<div class="education-item">
+
+### **EPFL** --- Bachelor of Science in Microengineering
+*GPA: **5.38 / 6** | 2022 -- 2025*
 
 **Relevant Coursework:**
 - Electronics I & II, OOP, Digital System Design
@@ -45,19 +72,31 @@ Robotics Master's student at **EPFL** with hands-on experience in autonomous nav
 - Signals and Systems, Semi-conductor Physics
 - Introduction to PCB Design & Manufacturing
 
+</div>
+
+<div class="education-item">
+
 ### **École Européenne Luxembourg II**
-*Baccalauréat Scientifique* | **95.02/100** | 2022
+*Baccalauréat Scientifique | **95.02 / 100** | 2022*
 - Secretary of the BAC Committee
 - Yearbook Committee Member
 
+</div>
+
+</div>
+
 ---
+
+<div id="projects" class="section reveal">
 
 ## Projects
 
-### 🤖 **EPFL Xplore - European Rover Challenge Winner**
-*Team Leader - Autonomous Navigation* | Sep 2024 - Aug 2025
+<div class="project-card reveal">
 
-<img src="ERC_win.jpg" alt="ERC Winning Rover" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
+### EPFL Xplore --- European Rover Challenge Winner
+*Team Leader -- Autonomous Navigation | Sep 2024 -- Aug 2025*
+
+<img src="ERC_win.jpg" alt="ERC Winning Rover">
 
 **Overview:**
 Led the development of the autonomous navigation subsystem for a Mars rover that won the European Rover Challenge 2025.
@@ -74,12 +113,12 @@ Led the development of the autonomous navigation subsystem for a Mars rover that
 
 [View Project Details →](#project-rover-winner)
 
----
+</div>
 
-### 🦾 **Custom 6DoF Robotic Arm**
-*Personal Project* | Fall 2025 - Ongoing
+<div class="project-card reveal">
 
-<!-- ![Robotic Arm](https://via.placeholder.com/800x400?text=Robotic+Arm) -->
+### Custom 6DoF Robotic Arm
+*Personal Project | Fall 2025 -- Ongoing*
 
 **Overview:**
 Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with computer vision capabilities.
@@ -95,11 +134,12 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 
 [View Project Details →](#project-robotic-arm)
 
----
-### 🚗 **Thymio Autonomous Mobile Robot**
-*Academic Project* | Fall 2025
+</div>
 
-<!-- <img src="epuck_example.jpg" alt="Thymio Mobile Robot" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;"> -->
+<div class="project-card reveal">
+
+### Thymio Autonomous Mobile Robot
+*Academic Project | Fall 2025*
 
 **Overview:**
 Real-time autonomous navigation system for the Thymio educational robot.
@@ -113,15 +153,14 @@ Real-time autonomous navigation system for the Thymio educational robot.
 **Technologies:**
 `Python` `EKF` `OpenCV`
 
-<!-- [View Project Details →](#project-epuck) -->
+</div>
 
----
+<div class="project-card reveal">
 
+### STM32 RTOS Autonomous Mobile Robot
+*Academic Project | Spring 2025*
 
-### 🚗 **STM32 RTOS Autonomous Mobile Robot**
-*Academic Project* | Spring 2025
-
-<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
+<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot">
 
 **Overview:**
 Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
@@ -135,14 +174,14 @@ Real-time autonomous navigation system for the e-puck 2 robot platform using Chi
 **Technologies:**
 `STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
 
-<!-- [View Project Details →](#project-epuck) -->
+</div>
 
----
+<div class="project-card reveal">
 
-###  **Direction of Arrival using LibreSDR**
-*Personal Project* | Fall 2025
+### Direction of Arrival using LibreSDR
+*Personal Project | Fall 2025*
 
-<img src="libresdr.jpg" alt="SDR used for DoA" style="display: block; max-width: 400px; border-radius: 15px; margin: 20px auto;">
+<img src="libresdr.jpg" alt="SDR used for DoA" style="max-width: 400px;">
 
 **Overview:**
 MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
@@ -152,14 +191,13 @@ MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
 
 **Technologies:**
 `DoA` `SDR`
-<!-- [View Project Details →](#project-solar-oven) -->
 
----
+</div>
 
-### ☀️ **Solar Tracking Solar Oven**
-*Personal Project* | Fall 2025 - Ongoing
+<div class="project-card reveal">
 
-<!-- ![Solar Oven](https://via.placeholder.com/800x400?text=Solar+Oven) -->
+### Solar Tracking Solar Oven
+*Personal Project | Fall 2025 -- Ongoing*
 
 **Overview:**
 Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency through precise dual-axis control.
@@ -175,26 +213,39 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 [View Project Details →](#project-solar-oven)
 
----
+</div>
 
-### **Mechanial Oscillator design with mechanical flexures**
-- insensitive to linear and angular velocities and accelerations
+<div class="project-card reveal">
+
+### Mechanical Oscillator Design
+*Academic Project*
+
+- Insensitive to linear and angular velocities and accelerations
 - Fusion 360 CAD and Simulations
 - Material Selection
 
----
+</div>
 
-### **AVR Assembly Project**
+<div class="project-card reveal">
+
+### AVR Assembly Project
+*Academic Project*
+
 - AVR Assembly Code
 - LCD, Keypad, Stepper Motor and distance sensor integration
 
+</div>
 
+</div>
 
+---
+
+<div id="experience" class="section experience reveal">
 
 ## Professional Experience
 
-### **EPFL Xplore - Software Systems Engineer**
-*Sep 2025 - Ongoing*
+### **EPFL Xplore --- Software Systems Engineer**
+*Sep 2025 -- Ongoing*
 
 Leading the end-to-end software architecture of a 4-wheeled Martian rover:
 - Autonomous navigation stack (ROS2/Nav2)
@@ -204,8 +255,8 @@ Leading the end-to-end software architecture of a 4-wheeled Martian rover:
 - Containerized deployments with Docker
 - Team coordination across perception, planning, and control modules
 
-### **EPFL Xplore - Software Engineer**
-*Sep 2023 - Sep 2024*
+### **EPFL Xplore --- Software Engineer**
+*Sep 2023 -- Sep 2024*
 
 Developed ROS2-based manual and autonomous navigation system:
 - Implemented SLAM using 2D LiDAR
@@ -213,18 +264,22 @@ Developed ROS2-based manual and autonomous navigation system:
 - Custom wheel odometry implementation
 - Cross-functional collaboration with mechanical and electrical teams
 
-### **ETML - Machining Intern**
+### **ETML --- Machining Intern**
 *Aug 2024*
 
 Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
 
 ### **EPFL Teaching Assistant**
+
 - EE-295 : Electrical Systems and Electronics 1
 - EE-296 : Electrical Systems and Electronics 2
 - ME-326 : Control Systems and discrete-time control
 
+</div>
 
 ---
+
+<div id="skills" class="section reveal">
 
 ## Technical Skills
 
@@ -306,16 +361,6 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ### **Control & Estimation**
 
-<!-- <div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">SLAM</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 60%;"></div>
-  </div>
-</div> -->
-
 <div class="skill-item">
   <div class="skill-header">
     <span class="skill-name">Extended Kalman Filter</span>
@@ -355,7 +400,6 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
     <div class="skill-progress" style="width: 50%;"></div>
   </div>
 </div>
-
 
 ### **Embedded Systems**
 
@@ -465,42 +509,76 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 </div>
 
+</div>
+
 ---
+
+<div class="section reveal">
 
 ## Competitions & Awards
 
-### 🏆 **European Rover Challenge 2025 - Winner**
-Led autonomous navigation team, which helped our team earn the 1st place in the international Mars rover competition ERC.
+<div class="award-item">
+  <div class="award-icon">🏆</div>
+  <div>
+    <h3><strong>European Rover Challenge 2025 --- Winner</strong></h3>
+    <p>Led autonomous navigation team, which helped our team earn 1st place in the international Mars rover competition ERC.</p>
+  </div>
+</div>
 
-### 🥈 **Luxembourg Informatics Olympiad - Semi-Finalist**
-Applied optimization and path-finding algorithms in competitive programming
+<div class="award-item">
+  <div class="award-icon">🥈</div>
+  <div>
+    <h3><strong>Luxembourg Informatics Olympiad --- Semi-Finalist</strong></h3>
+    <p>Applied optimization and path-finding algorithms in competitive programming.</p>
+  </div>
+</div>
+
+</div>
 
 ---
+
+<div class="section reveal">
 
 ## Languages
 
-- 🇫🇷 **French** - Native
-- 🇬🇧 **English** - Fluent (TOEFL iBT: 112/120)
-- 🇩🇪 **German** - Basic
-- 🇳🇱 **Dutch** - Basic
+<div class="lang-grid">
+  <div class="lang-item">🇫🇷 <strong>French</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Native</span></div>
+  <div class="lang-item">🇬🇧 <strong>English</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Fluent (TOEFL 112/120)</span></div>
+  <div class="lang-item">🇩🇪 <strong>German</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
+  <div class="lang-item">🇳🇱 <strong>Dutch</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
+</div>
+
+</div>
 
 ---
+
+<div class="section reveal">
 
 ## Interests & Hobbies
 
-🧗 Rock Climbing | 🏂 Snowboarding | 🎸 Electric Guitar | ⛵ Sailing
+<div class="hobby-grid">
+  <span class="hobby-item">🧗 Rock Climbing</span>
+  <span class="hobby-item">🏂 Snowboarding</span>
+  <span class="hobby-item">🎸 Electric Guitar</span>
+  <span class="hobby-item">⛵ Sailing</span>
+</div>
+
+</div>
 
 ---
 
+<div class="section reveal">
+
 ## Detailed Project Showcases
 
-<a name="project-rover-winner"></a>
-### **European Rover Challenge Winner - Autonomous Navigation System**
+<div class="showcase" id="project-rover-winner">
+
+### **European Rover Challenge Winner --- Autonomous Navigation System**
 
 #### **Problem Statement**
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
 
-<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
+<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation">
 
 #### **Solution Architecture**
 
@@ -511,7 +589,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
   - LiDAR-Inertial Odometry
 - Double-Ackermann kinematics model for accurate motion prediction
 
-<img src="lidar_slam.jpg" alt="LiDAR SLAM Output" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
+<img src="lidar_slam.jpg" alt="LiDAR SLAM Output">
 
 **2. Perception System**
 - 3D Ouster LiDAR for obstacle detection and SLAM
@@ -523,7 +601,7 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Dynamic obstacle avoidance
 - Waypoint navigation with Pure Pursuit
 
-<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection" style="display: block; max-width: 600px; border-radius: 15px; margin: 20px auto;">
+<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection">
 
 **4. Communication & Integration**
 - Wireless telemetry system for remote monitoring
@@ -543,21 +621,17 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 | Real-time performance | Optimized algorithms and leveraged GPU acceleration on Jetson |
 | Sensor noise and drift | Custom EKF with adaptive noise covariance |
 
-<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="display: block; max-width: 700px; border-radius: 15px; margin: 20px auto;">
-<!-- Add text that says it was solved using convex optimization with the ECOS solver and CVXPY -->
+<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="max-width: 700px;">
+
 Solved using CVXPY and the ECOS SOCP Solver
 
-<!-- #### **Media Gallery**
-<div style="display: flex; gap: 15px; flex-wrap: wrap; justify-content: center;">
-  <img src="https://via.placeholder.com/400x300?text=Autonomous+Navigation" alt="Rover Navigation" style="width: 400px; border-radius: 12px;">
-  <img src="https://via.placeholder.com/400x300?text=EKF+Localization" alt="EKF Visualization" style="width: 400px; border-radius: 12px;">
-  <img src="https://via.placeholder.com/400x300?text=Team+Victory" alt="Team Photo" style="width: 400px; border-radius: 12px;">
-</div> -->
+</div>
 
 ---
 
-<a name="project-robotic-arm"></a>
-### **6DoF Robotic Arm - Design & Control**
+<div class="showcase" id="project-robotic-arm">
+
+### **6DoF Robotic Arm --- Design & Control**
 
 #### **Project Goals**
 - Design a fully 3D-printable robotic arm
@@ -571,63 +645,34 @@ Solved using CVXPY and the ECOS SOCP Solver
 - Custom 3D-printed components in Fusion 360
 - Standard stepper motor interfaces
 
-
 #### **Current Progress**
-- ✅ Custom Arduino Stepper Motor control libary
-- ✅ Motor Control through ros2 node
+- ✅ Custom Arduino Stepper Motor control library
+- ✅ Motor Control through ROS2 node
 - ⏳ Mechanical Design in progress
 - ⏳ Object Pose estimation using classical CV methods and DepthAnything V3
 - ⏳ MoveIt Config with UR5 URDF
 
----
-<!-- 
-<a name="project-solar-oven"></a>
-### **Solar Tracking Solar Oven**
+</div>
 
-#### **System Overview**
-Automated dual-axis sun tracking system for cooking, with a small web app.
-
-#### **Hardware Components**
-- **Microcontroller:** ESP32
-- **Sensors:** 6x lux sensors in multiple directions
-- **Actuators:** 2x stepper motors (pitch & yaw)
-- **Power:** Custom PCB DC-DC buck converter (24V → 5V/3.3V)
-
+</div>
 
 ---
 
-<a name="project-epuck"></a>
-### **STM32 RTOS Autonomous Mobile Robot**
-
-#### **Platform**
-e-puck 2 educational robot with:
-- STM32F407 microcontroller
-- 8 proximity sensors
-- IMU (accelerometer, gyroscope)
-- Differential drive system
-
-#### **Real-Time Architecture**
-Built on ChibiOS RTOS with prioritized tasks:
-1. **High Priority:** Motor control
-2. **Medium Priority:** Sensor reading
-3. **Medium Priority:** EKF localization
-4. **Low Priority:** Map creation using detected obstacles
-
---- -->
-
-
+<div id="contact" class="section contact-section reveal">
 
 ## Contact
 
 I'm always interested in discussing robotics projects, collaboration opportunities, or new challenges in autonomous systems.
 
-📧 **Email:** [arno.laurie.pro@gmail.com](mailto:/arno.laurie.pro@gmail.com)
+📧 **Email:** [arno.laurie.pro@gmail.com](mailto:arno.laurie.pro@gmail.com)
 
 🔗 **LinkedIn:** [linkedin.com/in/arno-laurie](https://ch.linkedin.com/in/arno-laurie-816a73229)
 
 💻 **GitHub:** [github.com/Netfluxx](https://github.com/Netfluxx)
 
 📍 **Location:** Lausanne, Switzerland
+
+</div>
 
 ---
 
