@@ -240,45 +240,6 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 ---
 
-<div id="experience" class="section experience reveal" markdown="1">
-
-## Professional Experience
-
-### EPFL Xplore — Software Systems Engineer
-*Sep 2025 — Ongoing*
-
-Leading the end-to-end software architecture of a 4-wheeled Martian rover:
-- Autonomous navigation stack (ROS2/Nav2)
-- Robotic arm control (MoveIt)
-- Real-time wireless communication protocols
-- Sensor fusion (IMU, LiDAR, cameras)
-- Containerized deployments with Docker
-- Team coordination across perception, planning, and control modules
-
-### EPFL Xplore — Software Engineer
-*Sep 2023 — Sep 2024*
-
-Developed ROS2-based manual and autonomous navigation system:
-- Implemented SLAM using 2D LiDAR
-- Designed low-level PID motor controller with Arduino
-- Custom wheel odometry implementation
-- Cross-functional collaboration with mechanical and electrical teams
-
-### ETML — Machining Intern
-*Aug 2024*
-
-Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
-
-### EPFL Teaching Assistant
-
-- EE-295 : Electrical Systems and Electronics 1
-- EE-296 : Electrical Systems and Electronics 2
-- ME-326 : Control Systems and discrete-time control
-
-</div>
-
----
-
 <div id="skills" class="section reveal" markdown="1">
 
 ## Technical Skills
