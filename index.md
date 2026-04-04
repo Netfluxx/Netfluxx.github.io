@@ -9,7 +9,7 @@ layout: default
     <div class="hero__badges">
       <a href="mailto:arno.laurie.pro@gmail.com" class="hero__badge">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-        arno.laurie.pro@gmail.com
+        Email
       </a>
       <a href="https://ch.linkedin.com/in/arno-laurie-816a73229" class="hero__badge">
         <svg viewBox="0 0 24 24"><path d="M19 3a2 2 0 012 2v14a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h14m-.5 15.5v-5.3a3.26 3.26 0 00-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 011.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 001.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 00-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
@@ -17,7 +17,7 @@ layout: default
       </a>
       <a href="https://github.com/Netfluxx" class="hero__badge">
         <svg viewBox="0 0 24 24"><path d="M12 2A10 10 0 002 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0012 2z"/></svg>
-        Netfluxx
+        GitHub
       </a>
     </div>
   </div>
@@ -28,7 +28,7 @@ layout: default
 
 ---
 
-<div id="about" class="section reveal">
+<div id="about" class="section reveal" markdown="1">
 
 ## About Me
 
@@ -40,14 +40,14 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 
 ---
 
-<div id="education" class="section reveal">
+<div id="education" class="section reveal" markdown="1">
 
 ## Education
 
-<div class="education-item">
+<div class="education-item" markdown="1">
 
-### **EPFL** --- Master of Science in Robotics
-*2025 -- Ongoing*
+### EPFL — Master of Science in Robotics
+*2025 — Ongoing*
 
 **Relevant Coursework:**
 - Manipulation & Computer Vision
@@ -59,10 +59,10 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 
 </div>
 
-<div class="education-item">
+<div class="education-item" markdown="1">
 
-### **EPFL** --- Bachelor of Science in Microengineering
-*GPA: **5.38 / 6** | 2022 -- 2025*
+### EPFL — Bachelor of Science in Microengineering
+*GPA: **5.38 / 6** | 2022 — 2025*
 
 **Relevant Coursework:**
 - Electronics I & II, OOP, Digital System Design
@@ -74,9 +74,9 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 
 </div>
 
-<div class="education-item">
+<div class="education-item" markdown="1">
 
-### **École Européenne Luxembourg II**
+### École Européenne Luxembourg II
 *Baccalauréat Scientifique | **95.02 / 100** | 2022*
 - Secretary of the BAC Committee
 - Yearbook Committee Member
@@ -87,14 +87,14 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 
 ---
 
-<div id="projects" class="section reveal">
+<div id="projects" class="section reveal" markdown="1">
 
 ## Projects
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
-### EPFL Xplore --- European Rover Challenge Winner
-*Team Leader -- Autonomous Navigation | Sep 2024 -- Aug 2025*
+### EPFL Xplore — European Rover Challenge Winner
+*Team Leader — Autonomous Navigation | Sep 2024 — Aug 2025*
 
 <img src="ERC_win.jpg" alt="ERC Winning Rover">
 
@@ -115,10 +115,10 @@ Led the development of the autonomous navigation subsystem for a Mars rover that
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### Custom 6DoF Robotic Arm
-*Personal Project | Fall 2025 -- Ongoing*
+*Personal Project | Fall 2025 — Ongoing*
 
 **Overview:**
 Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with computer vision capabilities.
@@ -136,7 +136,7 @@ Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with c
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### Thymio Autonomous Mobile Robot
 *Academic Project | Fall 2025*
@@ -155,7 +155,7 @@ Real-time autonomous navigation system for the Thymio educational robot.
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### STM32 RTOS Autonomous Mobile Robot
 *Academic Project | Spring 2025*
@@ -176,7 +176,7 @@ Real-time autonomous navigation system for the e-puck 2 robot platform using Chi
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### Direction of Arrival using LibreSDR
 *Personal Project | Fall 2025*
@@ -194,10 +194,10 @@ MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### Solar Tracking Solar Oven
-*Personal Project | Fall 2025 -- Ongoing*
+*Personal Project | Fall 2025 — Ongoing*
 
 **Overview:**
 Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency through precise dual-axis control.
@@ -215,7 +215,7 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### Mechanical Oscillator Design
 *Academic Project*
@@ -226,7 +226,7 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 </div>
 
-<div class="project-card reveal">
+<div class="project-card reveal" markdown="1">
 
 ### AVR Assembly Project
 *Academic Project*
@@ -240,12 +240,12 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 ---
 
-<div id="experience" class="section experience reveal">
+<div id="experience" class="section experience reveal" markdown="1">
 
 ## Professional Experience
 
-### **EPFL Xplore --- Software Systems Engineer**
-*Sep 2025 -- Ongoing*
+### EPFL Xplore — Software Systems Engineer
+*Sep 2025 — Ongoing*
 
 Leading the end-to-end software architecture of a 4-wheeled Martian rover:
 - Autonomous navigation stack (ROS2/Nav2)
@@ -255,8 +255,8 @@ Leading the end-to-end software architecture of a 4-wheeled Martian rover:
 - Containerized deployments with Docker
 - Team coordination across perception, planning, and control modules
 
-### **EPFL Xplore --- Software Engineer**
-*Sep 2023 -- Sep 2024*
+### EPFL Xplore — Software Engineer
+*Sep 2023 — Sep 2024*
 
 Developed ROS2-based manual and autonomous navigation system:
 - Implemented SLAM using 2D LiDAR
@@ -264,12 +264,12 @@ Developed ROS2-based manual and autonomous navigation system:
 - Custom wheel odometry implementation
 - Cross-functional collaboration with mechanical and electrical teams
 
-### **ETML --- Machining Intern**
+### ETML — Machining Intern
 *Aug 2024*
 
 Gained hands-on manufacturing experience in manual metal machining (turning, milling, drilling, sawing, tapping, brazing)
 
-### **EPFL Teaching Assistant**
+### EPFL Teaching Assistant
 
 - EE-295 : Electrical Systems and Electronics 1
 - EE-296 : Electrical Systems and Electronics 2
@@ -279,13 +279,13 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ---
 
-<div id="skills" class="section reveal">
+<div id="skills" class="section reveal" markdown="1">
 
 ## Technical Skills
 
-<div class="skills-section">
+<div class="skills-section" markdown="1">
 
-### **Programming Languages**
+### Programming Languages
 
 <div class="skill-item">
   <div class="skill-header">
@@ -317,7 +317,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   </div>
 </div>
 
-### **Robotics Frameworks**
+### Robotics Frameworks
 
 <div class="skill-item">
   <div class="skill-header">
@@ -359,7 +359,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   </div>
 </div>
 
-### **Control & Estimation**
+### Control & Estimation
 
 <div class="skill-item">
   <div class="skill-header">
@@ -401,7 +401,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   </div>
 </div>
 
-### **Embedded Systems**
+### Embedded Systems
 
 <div class="skill-item">
   <div class="skill-header">
@@ -443,7 +443,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   </div>
 </div>
 
-### **Electronics & Hardware**
+### Electronics & Hardware
 
 <div class="skill-item">
   <div class="skill-header">
@@ -465,7 +465,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
   </div>
 </div>
 
-### **Tools & Platforms**
+### Tools & Platforms
 
 <div class="skill-item">
   <div class="skill-header">
@@ -513,14 +513,14 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ---
 
-<div class="section reveal">
+<div class="section reveal" markdown="1">
 
 ## Competitions & Awards
 
 <div class="award-item">
   <div class="award-icon">🏆</div>
   <div>
-    <h3><strong>European Rover Challenge 2025 --- Winner</strong></h3>
+    <h3>European Rover Challenge 2025 — Winner</h3>
     <p>Led autonomous navigation team, which helped our team earn 1st place in the international Mars rover competition ERC.</p>
   </div>
 </div>
@@ -528,7 +528,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 <div class="award-item">
   <div class="award-icon">🥈</div>
   <div>
-    <h3><strong>Luxembourg Informatics Olympiad --- Semi-Finalist</strong></h3>
+    <h3>Luxembourg Informatics Olympiad — Semi-Finalist</h3>
     <p>Applied optimization and path-finding algorithms in competitive programming.</p>
   </div>
 </div>
@@ -537,7 +537,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ---
 
-<div class="section reveal">
+<div class="section reveal" markdown="1">
 
 ## Languages
 
@@ -552,7 +552,7 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ---
 
-<div class="section reveal">
+<div class="section reveal" markdown="1">
 
 ## Interests & Hobbies
 
@@ -567,20 +567,20 @@ Gained hands-on manufacturing experience in manual metal machining (turning, mil
 
 ---
 
-<div class="section reveal">
+<div class="section reveal" markdown="1">
 
 ## Detailed Project Showcases
 
-<div class="showcase" id="project-rover-winner">
+<div class="showcase" id="project-rover-winner" markdown="1">
 
-### **European Rover Challenge Winner --- Autonomous Navigation System**
+### European Rover Challenge Winner — Autonomous Navigation System
 
-#### **Problem Statement**
+#### Problem Statement
 Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
 
 <img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation">
 
-#### **Solution Architecture**
+#### Solution Architecture
 
 **1. Localization & State Estimation**
 - Custom Extended Kalman Filter fusing:
@@ -607,13 +607,13 @@ Design and implement a robust autonomous navigation system for a Mars rover capa
 - Wireless telemetry system for remote monitoring
 - Docker containerization for consistent deployments on NVIDIA Jetson
 
-#### **Results**
+#### Results
 - 🥇 First place in European Rover Challenge 2025
 - Successfully completed all autonomous navigation tasks
 - Demonstrated robust performance in outdoor terrain
 - Achieved sub 15cm accuracy in GPS-denied environments
 
-#### **Technical Challenges & Solutions**
+#### Technical Challenges & Solutions
 
 | Challenge | Solution |
 |-----------|----------|
@@ -629,23 +629,23 @@ Solved using CVXPY and the ECOS SOCP Solver
 
 ---
 
-<div class="showcase" id="project-robotic-arm">
+<div class="showcase" id="project-robotic-arm" markdown="1">
 
-### **6DoF Robotic Arm --- Design & Control**
+### 6DoF Robotic Arm — Design & Control
 
-#### **Project Goals**
+#### Project Goals
 - Design a fully 3D-printable robotic arm
 - Custom motor control library
 - Implement inverse kinematics and motion planning
 - Integrate computer vision for object manipulation
 - Create a user-friendly control interface
 
-#### **Mechanical Design**
+#### Mechanical Design
 - 6 degrees of freedom
 - Custom 3D-printed components in Fusion 360
 - Standard stepper motor interfaces
 
-#### **Current Progress**
+#### Current Progress
 - ✅ Custom Arduino Stepper Motor control library
 - ✅ Motor Control through ROS2 node
 - ⏳ Mechanical Design in progress
@@ -658,7 +658,7 @@ Solved using CVXPY and the ECOS SOCP Solver
 
 ---
 
-<div id="contact" class="section contact-section reveal">
+<div id="contact" class="section contact-section reveal" markdown="1">
 
 ## Contact
 
