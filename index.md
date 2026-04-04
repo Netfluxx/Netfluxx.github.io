@@ -160,7 +160,7 @@ Real-time autonomous navigation system for the Thymio educational robot.
 ### STM32 RTOS Autonomous Mobile Robot
 *Academic Project | Spring 2025*
 
-<img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot">
+<!-- <img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot"> -->
 
 **Overview:**
 Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
