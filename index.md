@@ -121,16 +121,17 @@ Led the development of the autonomous navigation subsystem for a Mars rover that
 *Personal Project | Fall 2025 — Ongoing*
 
 **Overview:**
-Designing and building a fully 3D-printed 6-degree-of-freedom robotic arm with computer vision capabilities.
+Designing and building a 6-degree-of-freedom robotic arm using QDD BLDC actuators, with sheet metal structure and 3D-printed outer shells.
 
 **Technical Highlights:**
-- Motion planning using MoveIt framework
+- QDD BLDC actuator control and driver development
+- Custom 3D motion planner (in progress)
 - Real-time control with ROS2
 - Computer vision integration with OpenCV
-- Custom mechanical design in Fusion 360
+- Mechanical design in Fusion 360 (sheet metal + 3D-printed shells)
 
 **Technologies:**
-`ROS2` `MoveIt` `OpenCV` `Fusion 360` `Python` `C++`
+`ROS2` `OpenCV` `Fusion 360` `Python` `C++` `BLDC`
 
 [View Project Details →](#project-robotic-arm)
 
@@ -595,23 +596,24 @@ Solved using CVXPY and the ECOS SOCP Solver
 ### 6DoF Robotic Arm — Design & Control
 
 #### Project Goals
-- Design a fully 3D-printable robotic arm
-- Custom motor control library
-- Implement inverse kinematics and motion planning
+- Design a robotic arm with QDD BLDC actuators
+- Custom motor driver and control library
+- Implement a custom 3D motion planner
 - Integrate computer vision for object manipulation
 - Create a user-friendly control interface
 
 #### Mechanical Design
 - 6 degrees of freedom
-- Custom 3D-printed components in Fusion 360
-- Standard stepper motor interfaces
+- Sheet metal structure with 3D-printed outer shells
+- QDD BLDC actuator interfaces
+- CAD in Fusion 360
 
 #### Current Progress
-- ✅ Custom Arduino Stepper Motor control library
-- ✅ Motor Control through ROS2 node
-- ⏳ Mechanical Design in progress
+- ✅ QDD BLDC actuator driver development
+- ✅ Motor control through ROS2 node
+- ⏳ Custom 3D motion planner
+- ⏳ Mechanical design in progress
 - ⏳ Object Pose estimation using classical CV methods and DepthAnything V3
-- ⏳ MoveIt Config with UR5 URDF
 
 </div>
 
