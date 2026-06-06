@@ -141,19 +141,6 @@ Leading end-to-end software architecture for the 2025/26 competition rover: auto
 
 </div>
 
-<div class="project-card reveal" markdown="1">
-
-### Custom 6DoF Robotic Arm
-*Personal Project | Fall 2025 — Ongoing*
-
-Designing and building a 6-DoF arm with QDD BLDC actuators, sheet metal structure, and 3D-printed shells. Custom motor driver development, ROS2 control node, and ongoing work on a custom 3D motion planner and object pose estimation with DepthAnything V3.
-
-**Technologies:**
-`ROS2` `OpenCV` `Fusion 360` `Python` `C++` `BLDC`
-
-[View Project Details →](#project-robotic-arm)
-
-</div>
 
 <div class="project-card reveal" markdown="1">
 
@@ -533,28 +520,6 @@ Design and deploy a complete autonomous navigation system for a Mars rover opera
 
 </div>
 
----
-
-<div class="showcase" id="project-robotic-arm" markdown="1">
-
-### 6DoF Robotic Arm — Design & Control
-
-#### Goals
-- QDD BLDC actuator control and custom driver library
-- Custom 3D motion planner (in progress)
-- Computer vision for object pose estimation
-
-#### Mechanical
-- 6 degrees of freedom, sheet metal + 3D-printed shells
-- QDD BLDC actuator interfaces, CAD in Fusion 360
-
-#### Progress
-- ✅ QDD BLDC actuator driver development
-- ✅ ROS2 control node
-- ⏳ Custom 3D motion planner
-- ⏳ Object pose estimation (classical CV + DepthAnything V3)
-
-</div>
 
 </div>
 

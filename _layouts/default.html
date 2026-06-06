@@ -115,9 +115,9 @@
         var t = Math.max(0.0, Math.min(1.0, (y + 2.0) / 5.5));
         var t2 = t * t;
         return [
-          0.02 + t2 * 0.13,
-          0.36 + t * 0.50 + t2 * 0.10,
-          0.58 + t * 0.34 + t2 * 0.08
+          0.28 + t * 0.58 + t2 * 0.06,  // r: dark rust → orange → ochre
+          0.07 + t * 0.52 + t2 * 0.07,  // g: near-zero → warm amber
+          0.01 + t * 0.10 + t2 * 0.04   // b: near-zero throughout
         ];
       }
 
@@ -174,7 +174,7 @@
         var dz = Math.sin(da) * dd;
         var dy = terrainY(dx, dz) + Math.random() * 0.7;
         var s = 0.1 + Math.random() * 0.32;
-        ap(dx, dy, dz, 0, s * 0.48, s * 0.70);
+        ap(dx, dy, dz, s * 0.38, s * 0.13, s * 0.02);
       }
 
       var geom = new THREE.BufferGeometry();
