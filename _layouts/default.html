@@ -122,7 +122,7 @@
       }
 
       var isMobile = window.innerWidth < 768;
-      var NPTS = isMobile ? 3500 : 6500;
+      var NPTS = isMobile ? 6000 : 14000;
       var pos = new Float32Array(NPTS * 3);
       var col = new Float32Array(NPTS * 3);
       var n = 0;
@@ -135,7 +135,7 @@
       }
 
       // Ground terrain surface
-      var gCount = isMobile ? 2200 : 4200;
+      var gCount = isMobile ? 5200 : 12500;
       for (var i = 0; i < gCount; i++) {
         var a = Math.random() * 6.2832;
         var d = Math.sqrt(Math.random()) * 17;
@@ -146,27 +146,8 @@
         ap(x, y, z, c[0], c[1], c[2]);
       }
 
-      // Vertical obstacles — rocks and boulders
-      var obs = [
-        [5.5, 2.8], [-4.2, 4.5], [8.8, -3.6], [-7.5, -2.8],
-        [3.2, -8.5], [-2.5, 6.8], [0.8, 4.2], [-5.5, -6.8],
-        [10.5, 1.5], [-10.8, 3.2], [2.2, -12], [-8.5, 8.8]
-      ];
-      var oCount = isMobile ? 900 : 1700;
-      for (var j = 0; j < oCount; j++) {
-        var ob = obs[j % obs.length];
-        var r = Math.random() * 0.6;
-        var aa = Math.random() * 6.2832;
-        var h = Math.random() * 4.8;
-        var xp = ob[0] + Math.cos(aa) * r;
-        var zp = ob[1] + Math.sin(aa) * r;
-        var yp = terrainY(ob[0], ob[1]) + h;
-        var c2 = hcol(yp);
-        ap(xp, yp, zp, c2[0] * 0.72, c2[1], c2[2]);
-      }
-
       // Sparse distant returns — outer range ring
-      var dCount = isMobile ? 400 : 600;
+      var dCount = isMobile ? 800 : 1500;
       for (var k = 0; k < dCount; k++) {
         var da = Math.random() * 6.2832;
         var dd = 15.5 + Math.random() * 4.5;
