@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 title: Arno Laurie
-description: Robotics Engineer — EPFL | Autonomous Navigation, Sensor Fusion, ROS2
+description: SLAM & State Estimation — Robotics MSc EPFL | LiDAR-Inertial SLAM, EKF/UKF, GTSAM, ROS2 | ERC 2025 Winner
 
 defaults:
   - scope:

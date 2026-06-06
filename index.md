@@ -5,9 +5,10 @@ layout: default
 <div class="hero">
   <div class="hero__text">
     <h1>Arno Laurie</h1>
-    <p class="hero__subtitle">Robotics Engineer</p>
+    <p class="hero__subtitle">SLAM & State Estimation</p>
+    <p class="hero__sub2">Robotics MSc<span class="sep">·</span>EPFL<span class="sep">·</span>ERC 2025 Winner</p>
     <div class="hero__badges">
-      <a href="mailto:arno.laurie.pro@gmail.com" class="hero__badge">
+      <a href="mailto:arno.laurie@epfl.ch" class="hero__badge">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Email
       </a>
@@ -33,8 +34,352 @@ layout: default
 ## About Me
 
 <p class="about-text">
-Robotics Master's student at <strong>EPFL</strong> with hands-on experience in autonomous navigation, robotic arm control, real-time systems using ROS2, and sensor fusion. Proven leadership in international competitions like the <strong>European Rover Challenge</strong>. Passionate about solving real-world problems through interdisciplinary robotics systems.
+I deployed the full autonomous navigation stack for EPFL Xplore's Mars rover solo — a LiDAR-inertial SLAM pipeline, 9-axis IMU integration, wheel odometry, and a custom EKF, all running reliably in GPS-denied outdoor terrain. The rover won the <strong>European Rover Challenge 2025</strong>.
 </p>
+
+<p class="about-text">
+I am now building a custom 3D SLAM system from scratch in C++ using <strong>GTSAM factor-graph optimization</strong> — LiDAR-inertial fusion, place recognition, and loop closure. I have also tuned production-grade systems (LIO-SAM, FAST-LIO2, GLIM) on real hardware, implemented EKFs and UKFs across multiple platforms, and built a custom 6-layer AHRS PCB with full firmware running the <strong>VqF</strong> attitude filter.
+</p>
+
+<p class="about-text">
+My focus: <strong>robust localization and state estimation for robots operating in GPS-denied, unstructured environments</strong>.
+</p>
+
+</div>
+
+---
+
+<div id="projects" class="section reveal" markdown="1">
+
+## Projects
+
+<span class="section-label">Featured — SLAM & State Estimation</span>
+
+<div class="project-card project-card--featured reveal" markdown="1">
+
+<span class="project-tag">&#9733; ERC 2025 Winner</span>
+
+### LiDAR-Inertial SLAM — Mars Rover Navigation Stack
+*EPFL Xplore | Team Leader Autonomous Navigation | Sep 2024 — Aug 2025*
+
+<img src="ERC_win.jpg" alt="ERC 2025 Winning Rover">
+
+Deployed the **full autonomous navigation stack solo** for a 4-wheeled Mars rover competing in the European Rover Challenge 2025 — GPS-denied outdoor terrain, no fallback.
+
+**SLAM & Localization:**
+- LiDAR-inertial SLAM pipeline (Ouster 3D LiDAR + 9-axis IMU)
+- Custom Extended Kalman Filter fusing wheel odometry, IMU, and LiDAR-inertial odometry
+- Global pose corrections via triangulation and trilateration with convex optimization (CVXPY/ECOS)
+- Sub-15 cm accuracy in GPS-denied outdoor environments
+- Production SLAM systems tuned on hardware: **LIO-SAM**, **FAST-LIO2**, **GLIM**
+
+**Planning & Control:**
+- Nav2 stack with Hybrid A\* global planner
+- Pure Pursuit path tracking with double-Ackermann kinematics
+- Dynamic obstacle avoidance
+
+<img src="lidar_slam.jpg" alt="LiDAR SLAM Output">
+
+**Technologies:**
+`C++` `Python` `ROS2` `OpenCV` `Docker` `Gazebo` `Arduino` `maxon EPOS`
+
+[View Detailed Showcase →](#project-rover-winner)
+
+</div>
+
+<div class="project-card project-card--featured reveal" markdown="1">
+
+<span class="project-tag">&#9733; Ongoing</span>
+
+### Custom 3D SLAM System — GTSAM Factor Graphs
+*Personal Project | Fall 2025 — Ongoing*
+
+Building a complete LiDAR SLAM system from scratch in C++ using **GTSAM factor-graph optimization** as the back-end. No black-box libraries — every component designed and implemented from the ground up.
+
+**Architecture:**
+- **Front-end:** LiDAR scan-to-map matching for incremental odometry; IMU preintegration for inter-frame constraint generation
+- **Back-end:** GTSAM incremental smoothing (iSAM2) for real-time factor graph optimization
+- **Place Recognition:** descriptor-based loop closure detection
+- **Back-end trigger:** pose-graph optimization on detected loop closures
+
+**Benchmarked against production systems** (LIO-SAM, FAST-LIO2, GLIM) on the same hardware and datasets.
+
+**Technologies:**
+`C++` `GTSAM` `ROS2` `PCL` `Eigen` `LiDAR`
+
+</div>
+
+<div class="project-card project-card--featured reveal" markdown="1">
+
+<span class="project-tag">&#9733; Hardware + Firmware</span>
+
+### Custom 6-Layer AHRS PCB & Drone Visual-Inertial Odometry
+*Personal Project | Fall 2025 — Ongoing*
+
+**AHRS Hardware:**
+Designed and built a custom **6-layer PCB** in KiCad implementing a full AHRS (Attitude and Heading Reference System). Firmware runs the **VqF (Versatile Quaternion-based Filter)** algorithm — a state-of-the-art sensor fusion filter for robust attitude estimation from 9-axis IMU data (accelerometer + gyroscope + magnetometer).
+
+**Visual-Inertial Odometry:**
+The AHRS PCB serves as the IMU unit for an **FPV drone VIO** pipeline — camera + IMU tight coupling for GPS-denied state estimation. Implements EKF-based fusion of visual feature tracks and inertial measurements.
+
+**Technologies:**
+`KiCad` `C` `STM32` `VqF` `OpenCV` `EKF/UKF` `ROS2`
+
+</div>
+
+<span class="section-label" style="margin-top: 2rem; display: block;">Other Projects</span>
+
+<div class="project-card reveal" markdown="1">
+
+### EPFL Xplore — Current Rover (Software Systems Engineer)
+*Sep 2025 — Ongoing*
+
+Leading end-to-end software architecture for the 2025/26 competition rover: autonomous navigation (ROS2/Nav2), robotic arm control (MoveIt), real-time wireless communication, and sensor fusion (IMU, LiDAR, cameras). Coordinating hardware-software integration across a multidisciplinary team on NVIDIA Jetson platforms.
+
+**Technologies:**
+`C++` `Python` `ROS2` `MoveIt` `Docker` `maxon EPOS`
+
+</div>
+
+<div class="project-card reveal" markdown="1">
+
+### Custom 6DoF Robotic Arm
+*Personal Project | Fall 2025 — Ongoing*
+
+Designing and building a 6-DoF arm with QDD BLDC actuators, sheet metal structure, and 3D-printed shells. Custom motor driver development, ROS2 control node, and ongoing work on a custom 3D motion planner and object pose estimation with DepthAnything V3.
+
+**Technologies:**
+`ROS2` `OpenCV` `Fusion 360` `Python` `C++` `BLDC`
+
+[View Project Details →](#project-robotic-arm)
+
+</div>
+
+<div class="project-card reveal" markdown="1">
+
+### STM32 RTOS Autonomous Mobile Robot
+*Academic Project | Spring 2025*
+
+Real-time autonomous navigation on the e-puck 2 platform using ChibiOS RTOS. Extended Kalman Filter for localization, real-time obstacle detection and mapping, efficient RTOS task scheduling, sensor fusion with IMU and proximity sensors.
+
+**Technologies:**
+`STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
+
+</div>
+
+<div class="project-card reveal" markdown="1">
+
+### Thymio Autonomous Mobile Robot
+*Academic Project | Fall 2025*
+
+Autonomous navigation with EKF localization and ArUco tag triangulation & trilateration using **convex optimization** (CVXPY/ECOS). Global path planning and real-time obstacle detection.
+
+**Technologies:**
+`Python` `EKF` `OpenCV` `CVXPY`
+
+</div>
+
+<div class="project-card reveal" markdown="1">
+
+### Solar Tracking Solar Oven
+*Personal Project | Fall 2025 — Ongoing*
+
+2-DoF sun-tracking system with custom DC-DC Buck converter PCB, ESP32 on FreeRTOS, lux sensor array, PID motor control, and mechanical design in Fusion 360.
+
+**Technologies:**
+`ESP32` `FreeRTOS` `KiCad` `Fusion 360` `PID`
+
+</div>
+
+<div class="project-card reveal" markdown="1">
+
+### Direction of Arrival — LibreSDR
+*Personal Project | Fall 2025*
+
+MUSIC and Root-MUSIC algorithm implementations for direction-of-arrival estimation on the LibreSDR platform.
+
+<img src="libresdr.jpg" alt="LibreSDR DoA" style="max-width: 360px;">
+
+**Technologies:**
+`Python` `SDR` `Signal Processing`
+
+</div>
+
+</div>
+
+---
+
+<div id="skills" class="section reveal" markdown="1">
+
+## Technical Skills
+
+<div class="skills-section">
+
+<div class="skills-grid">
+<div>
+
+### SLAM & Localization
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">LiDAR-Inertial SLAM</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">GTSAM / Factor Graphs</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">LIO-SAM · FAST-LIO2 · GLIM</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 72%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Visual-Inertial Odometry</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 65%;"></div></div>
+</div>
+
+### State Estimation
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Extended Kalman Filter</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 92%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Unscented Kalman Filter</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 78%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">IMU / LiDAR / Camera Fusion</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">AHRS / Attitude Estimation</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+</div>
+
+</div>
+<div>
+
+### Programming
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">C++</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 90%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Python</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">MATLAB / Simulink</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 68%;"></div></div>
+</div>
+
+### Robotics Frameworks
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">ROS2</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 88%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Nav2</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">OpenCV</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 75%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">MoveIt</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 62%;"></div></div>
+</div>
+
+### Embedded & Hardware
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">Arduino / NVIDIA Jetson</span><span class="skill-level">Advanced</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 85%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">STM32 / ESP32</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 68%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">KiCad — PCB Design</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+</div>
+
+<div class="skill-item">
+  <div class="skill-header"><span class="skill-name">FreeRTOS / ChibiOS</span><span class="skill-level">Intermediate</span></div>
+  <div class="skill-bar"><div class="skill-progress" style="width: 70%;"></div></div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+</div>
+
+---
+
+<div id="experience" class="section reveal" markdown="1">
+
+## Experience
+
+<div class="exp-item reveal" markdown="1">
+
+### EPFL Xplore — Software Systems Engineer
+<div class="exp-meta">Sep 2025 — Ongoing <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Leading end-to-end software architecture of the 2025/26 competition rover: autonomous navigation (ROS2/Nav2), robotic arm control (MoveIt), and real-time wireless communication. Coordinating perception, planning, and control integration across a multidisciplinary team on Jetson platforms. Containerized deployment with Docker; sensor fusion across IMU, LiDAR, and cameras.
+
+`C++` `Python` `ROS2` `Docker` `Jetson` `maxon EPOS`
+
+</div>
+
+<div class="exp-item reveal" markdown="1">
+
+### EPFL Xplore — Team Leader, Autonomous Navigation
+<div class="exp-meta">Sep 2024 — Aug 2025 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Led the development of the full navigation subsystem for the ERC 2025 rover. Solo deployment of the complete SLAM and navigation stack — LiDAR-inertial odometry, 9-axis IMU integration, wheel odometry, and custom EKF, running in GPS-denied outdoor terrain. **Won 1st place at the European Rover Challenge 2025.**
+
+`C++` `Python` `ROS2` `OpenCV` `Docker` `Gazebo` `Arduino`
+
+</div>
+
+<div class="exp-item reveal" markdown="1">
+
+### EPFL Xplore — Software Engineer
+<div class="exp-meta">Sep 2023 — Sep 2024 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Designed and implemented ROS2-based manual and autonomous navigation for an outdoor rover. 2D LiDAR SLAM integration, low-level PID motor controller on Arduino with custom wheel odometry. Collaborated with mechanical and electrical engineers on system integration.
+
+`C++` `Python` `ROS2` `Arduino`
+
+</div>
+
+<div class="exp-item reveal" markdown="1">
+
+### ETML — Machining Intern
+<div class="exp-meta">August 2024 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, and brazing.
+
+</div>
 
 </div>
 
@@ -54,8 +399,7 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 - Autonomous Navigation
 - Sensor Fusion and State Estimation
 - Machine Learning & Convex Optimization
-- Multivariable and Non-Linear Control
-- Model Predictive Control
+- Multivariable and Non-Linear Control, Model Predictive Control
 
 </div>
 
@@ -67,9 +411,8 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 **Relevant Coursework:**
 - Electronics I & II, OOP, Digital System Design
 - AVR Microcontrollers & Embedded Systems
-- Control Systems & Actuators
+- Control Systems, Signals and Systems
 - Real and Complex Analysis, Linear Algebra
-- Signals and Systems, Semi-conductor Physics
 - Introduction to PCB Design & Manufacturing
 
 </div>
@@ -78,396 +421,7 @@ Robotics Master's student at <strong>EPFL</strong> with hands-on experience in a
 
 ### École Européenne Luxembourg II
 *Baccalauréat Scientifique | **95.02 / 100** | 2022*
-- Secretary of the BAC Committee
-- Yearbook Committee Member
-
-</div>
-
-</div>
-
----
-
-<div id="projects" class="section reveal" markdown="1">
-
-## Projects
-
-<div class="project-card reveal" markdown="1">
-
-### EPFL Xplore — European Rover Challenge Winner
-*Team Leader — Autonomous Navigation | Sep 2024 — Aug 2025*
-
-<img src="ERC_win.jpg" alt="ERC Winning Rover">
-
-**Overview:**
-Led the development of the autonomous navigation subsystem for a Mars rover that won the European Rover Challenge 2025.
-
-**Key Achievements:**
-- Developed custom Extended Kalman Filter for sensor fusion
-- Implemented double-Ackermann kinematics for precise control
-- Use of the Nav2 Stack
-- Applied triangulation, trilateration, and Computer Vision techniques
-- Coordinated with multidisciplinary teams for hardware-software integration
-
-**Technologies:**
-`C++` `Python` `ROS2` `OpenCV` `Docker` `Gazebo` `Arduino` `maxon EPOS`
-
-[View Project Details →](#project-rover-winner)
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### Custom 6DoF Robotic Arm
-*Personal Project | Fall 2025 — Ongoing*
-
-**Overview:**
-Designing and building a 6-degree-of-freedom robotic arm using QDD BLDC actuators, with sheet metal structure and 3D-printed outer shells.
-
-**Technical Highlights:**
-- QDD BLDC actuator control and driver development
-- Custom 3D motion planner (in progress)
-- Real-time control with ROS2
-- Computer vision integration with OpenCV
-- Mechanical design in Fusion 360 (sheet metal + 3D-printed shells)
-
-**Technologies:**
-`ROS2` `OpenCV` `Fusion 360` `Python` `C++` `BLDC`
-
-[View Project Details →](#project-robotic-arm)
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### Thymio Autonomous Mobile Robot
-*Academic Project | Fall 2025*
-
-**Overview:**
-Real-time autonomous navigation system for the Thymio educational robot.
-
-**Technical Highlights:**
-- Extended Kalman Filter for localization
-- ArUco tag triangulation & trilateration using convex optimization
-- Real-time obstacle detection
-- Global Path Planning
-
-**Technologies:**
-`Python` `EKF` `OpenCV`
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### STM32 RTOS Autonomous Mobile Robot
-*Academic Project | Spring 2025*
-
-<!-- <img src="epuck_example.jpg" alt="E-puck 2 Mobile Robot"> -->
-
-**Overview:**
-Real-time autonomous navigation system for the e-puck 2 robot platform using ChibiOS RTOS.
-
-**Technical Highlights:**
-- Extended Kalman Filter for localization
-- Real-time obstacle detection and mapping
-- Efficient RTOS task scheduling
-- Sensor fusion with IMU and proximity sensors
-
-**Technologies:**
-`STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### Direction of Arrival using LibreSDR
-*Personal Project | Fall 2025*
-
-<img src="libresdr.jpg" alt="SDR used for DoA" style="max-width: 400px;">
-
-**Overview:**
-MUSIC and Root-MUSIC algorithm implementations on the LibreSDR.
-
-**Technical Highlights:**
-- Signal Processing
-
-**Technologies:**
-`DoA` `SDR`
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### Solar Tracking Solar Oven
-*Personal Project | Fall 2025 — Ongoing*
-
-**Overview:**
-Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency through precise dual-axis control.
-
-**Technical Highlights:**
-- Custom DC-DC Buck converter PCB design
-- ESP32-based control with FreeRTOS
-- PID motor control for accurate sun tracking
-- Lux sensor array for sun position detection
-
-**Technologies:**
-`ESP32` `FreeRTOS` `KiCad` `Fusion 360` `PID Control`
-
-[View Project Details →](#project-solar-oven)
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### Mechanical Oscillator Design
-*Academic Project*
-
-- Insensitive to linear and angular velocities and accelerations
-- Fusion 360 CAD and Simulations
-- Material Selection
-
-</div>
-
-<div class="project-card reveal" markdown="1">
-
-### AVR Assembly Project
-*Academic Project*
-
-- AVR Assembly Code
-- LCD, Keypad, Stepper Motor and distance sensor integration
-
-</div>
-
-</div>
-
----
-
-<div id="skills" class="section reveal" markdown="1">
-
-## Technical Skills
-
-<div class="skills-section" markdown="1">
-
-### Programming Languages
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">C++</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 90%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Python</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 90%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">MATLAB</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-### Robotics Frameworks
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">ROS2</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 85%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Nav2</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 75%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">OpenCV</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 75%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Gazebo</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 60%;"></div>
-  </div>
-</div>
-
-### Control & Estimation
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Extended Kalman Filter</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 85%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">PID Control</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 90%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Path Following</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 90%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Model Predictive Control</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 50%;"></div>
-  </div>
-</div>
-
-### Embedded Systems
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Arduino</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 85%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">STM32</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 60%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">ESP32</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">FreeRTOS / ChibiOS</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-### Electronics & Hardware
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">KiCad (PCB Design)</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Motor Control</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 85%;"></div>
-  </div>
-</div>
-
-### Tools & Platforms
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Docker</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Linux / Git</span>
-    <span class="skill-level">Advanced</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 85%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Simulink</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 70%;"></div>
-  </div>
-</div>
-
-<div class="skill-item">
-  <div class="skill-header">
-    <span class="skill-name">Fusion 360</span>
-    <span class="skill-level">Intermediate</span>
-  </div>
-  <div class="skill-bar">
-    <div class="skill-progress" style="width: 50%;"></div>
-  </div>
-</div>
+- Secretary of the BAC Committee · Yearbook Committee
 
 </div>
 
@@ -477,13 +431,13 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 <div class="section reveal" markdown="1">
 
-## Competitions & Awards
+## Awards
 
 <div class="award-item">
   <div class="award-icon">🏆</div>
   <div>
-    <h3>European Rover Challenge 2025 — Winner</h3>
-    <p>Led autonomous navigation team, which helped our team earn 1st place in the international Mars rover competition ERC.</p>
+    <h3>European Rover Challenge 2025 — 1st Place</h3>
+    <p>Led the autonomous navigation subsystem (SLAM, localization, path planning) that earned EPFL Xplore first place in the international Mars rover competition.</p>
   </div>
 </div>
 
@@ -505,7 +459,7 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 <div class="lang-grid">
   <div class="lang-item">🇫🇷 <strong>French</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Native</span></div>
-  <div class="lang-item">🇬🇧 <strong>English</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Fluent (TOEFL 112/120)</span></div>
+  <div class="lang-item">🇬🇧 <strong>English</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Fluent — TOEFL 112/120</span></div>
   <div class="lang-item">🇩🇪 <strong>German</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
   <div class="lang-item">🇳🇱 <strong>Dutch</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
 </div>
@@ -516,10 +470,11 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 <div class="section reveal" markdown="1">
 
-## Interests & Hobbies
+## Interests
 
 <div class="hobby-grid">
   <span class="hobby-item">🧗 Rock Climbing</span>
+  <span class="hobby-item">🚁 FPV Drones</span>
   <span class="hobby-item">🏂 Snowboarding</span>
   <span class="hobby-item">🎸 Electric Guitar</span>
   <span class="hobby-item">⛵ Sailing</span>
@@ -535,57 +490,46 @@ Autonomous sun-tracking system for a solar oven, maximizing thermal efficiency t
 
 <div class="showcase" id="project-rover-winner" markdown="1">
 
-### European Rover Challenge Winner — Autonomous Navigation System
+### ERC 2025 — LiDAR-Inertial SLAM Navigation Stack
 
-#### Problem Statement
-Design and implement a robust autonomous navigation system for a Mars rover capable of operating in challenging outdoor environments with minimal human intervention.
+#### Problem
+Design and deploy a complete autonomous navigation system for a Mars rover operating in GPS-denied, rough outdoor terrain — with no fallback localization source.
 
-<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation">
+<img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation in the Field">
 
-#### Solution Architecture
+#### Localization & State Estimation
 
-**1. Localization & State Estimation**
-- Custom Extended Kalman Filter fusing:
-  - IMU data (orientation, angular velocity)
-  - Wheel odometry (position, velocity)
-  - LiDAR-Inertial Odometry
-- Double-Ackermann kinematics model for accurate motion prediction
+**Sensor suite:** Ouster 3D LiDAR + 9-axis IMU (accelerometer, gyroscope, magnetometer) + wheel encoders
 
-<img src="lidar_slam.jpg" alt="LiDAR SLAM Output">
+- **LiDAR-inertial odometry** as the primary odometry source — high-frequency, drift-bounded
+- **Custom EKF** fusing wheel odometry, IMU, and LiDAR-inertial poses; adaptive noise covariance tuning for outdoor terrain
+- **Double-Ackermann kinematics** model for accurate motion prediction during tight turns
+- **Triangulation + trilateration** for absolute pose correction using visual landmarks — solved as a Second-Order Cone Program (SOCP) with CVXPY + ECOS
 
-**2. Perception System**
-- 3D Ouster LiDAR for obstacle detection and SLAM
-- Camera-based landmark detection
-- Triangulation and trilateration for landmark-base map localization
+<img src="lidar_slam.jpg" alt="LiDAR SLAM Occupancy Map">
 
-**3. Planning & Control**
-- ROS2 Nav2 stack for path planning: Hybrid A*
-- Dynamic obstacle avoidance
-- Waypoint navigation with Pure Pursuit
+**Production SLAM systems tuned on hardware:** LIO-SAM, FAST-LIO2, GLIM — used as references and for benchmarking the custom EKF stack.
 
-<img src="nav_waypoints.jpg" alt="Path Planning and Obstacle Detection">
+#### Perception & Planning
 
-**4. Communication & Integration**
-- Wireless telemetry system for remote monitoring
-- Docker containerization for consistent deployments on NVIDIA Jetson
+- 3D Ouster LiDAR for obstacle detection and costmap generation
+- Camera-based landmark detection (OpenCV)
+- Nav2 Hybrid A\* global planner + Pure Pursuit path tracking
+- Dynamic obstacle avoidance with local planner
+
+<img src="nav_waypoints.jpg" alt="Waypoint Navigation and Obstacle Detection">
 
 #### Results
-- 🥇 First place in European Rover Challenge 2025
-- Successfully completed all autonomous navigation tasks
-- Demonstrated robust performance in outdoor terrain
-- Achieved sub 15cm accuracy in GPS-denied environments
 
-#### Technical Challenges & Solutions
+| Metric | Result |
+|--------|--------|
+| Competition | European Rover Challenge 2025 — **1st Place** |
+| Localization accuracy | Sub 15 cm in GPS-denied outdoor terrain |
+| Deployment | Solo, full stack on NVIDIA Jetson in Docker |
 
-| Challenge | Solution |
-|-----------|----------|
-| Localization Precision | EKF Fusion with Wheel Odometry, 9-axis IMU, LiDAR-Inertial Odometry & Global Pose Corrections using triangulation and trilateration |
-| Real-time performance | Optimized algorithms and leveraged GPU acceleration on Jetson |
-| Sensor noise and drift | Custom EKF with adaptive noise covariance |
+<img src="convex_landmark.jpg" alt="Triangulation+Trilateration — SOCP Formulation" style="max-width: 700px;">
 
-<img src="convex_landmark.jpg" alt="Triangulation+Trilateration Algorithm" style="max-width: 700px;">
-
-Solved using CVXPY and the ECOS SOCP Solver
+*Landmark-based global pose correction: solved as a Second-Order Cone Program (SOCP) using CVXPY and the ECOS solver.*
 
 </div>
 
@@ -595,25 +539,20 @@ Solved using CVXPY and the ECOS SOCP Solver
 
 ### 6DoF Robotic Arm — Design & Control
 
-#### Project Goals
-- Design a robotic arm with QDD BLDC actuators
-- Custom motor driver and control library
-- Implement a custom 3D motion planner
-- Integrate computer vision for object manipulation
-- Create a user-friendly control interface
+#### Goals
+- QDD BLDC actuator control and custom driver library
+- Custom 3D motion planner (in progress)
+- Computer vision for object pose estimation
 
-#### Mechanical Design
-- 6 degrees of freedom
-- Sheet metal structure with 3D-printed outer shells
-- QDD BLDC actuator interfaces
-- CAD in Fusion 360
+#### Mechanical
+- 6 degrees of freedom, sheet metal + 3D-printed shells
+- QDD BLDC actuator interfaces, CAD in Fusion 360
 
-#### Current Progress
+#### Progress
 - ✅ QDD BLDC actuator driver development
-- ✅ Motor control through ROS2 node
+- ✅ ROS2 control node
 - ⏳ Custom 3D motion planner
-- ⏳ Mechanical design in progress
-- ⏳ Object Pose estimation using classical CV methods and DepthAnything V3
+- ⏳ Object pose estimation (classical CV + DepthAnything V3)
 
 </div>
 
@@ -625,9 +564,9 @@ Solved using CVXPY and the ECOS SOCP Solver
 
 ## Contact
 
-I'm always interested in discussing robotics projects, collaboration opportunities, or new challenges in autonomous systems.
+Open to internship opportunities, research collaborations, and robotics projects — particularly in SLAM, state estimation, and autonomous systems.
 
-📧 **Email:** [arno.laurie.pro@gmail.com](mailto:arno.laurie.pro@gmail.com)
+📧 **Email:** [arno.laurie@epfl.ch](mailto:arno.laurie@epfl.ch)
 
 🔗 **LinkedIn:** [linkedin.com/in/arno-laurie](https://ch.linkedin.com/in/arno-laurie-816a73229)
 
@@ -639,4 +578,4 @@ I'm always interested in discussing robotics projects, collaboration opportuniti
 
 ---
 
-*Last updated: November 2025*
+*Last updated: June 2026*
