@@ -34,7 +34,7 @@ layout: default
 ## About Me
 
 <p class="about-text">
-I deployed the full autonomous navigation stack for EPFL Xplore's Mars rover solo — a LiDAR-inertial SLAM pipeline, 9-axis IMU integration, wheel odometry, and a custom EKF, all running reliably in GPS-denied outdoor terrain. The rover won the <strong>European Rover Challenge 2025</strong>.
+I deployed the full autonomous navigation stack for EPFL Xplore's Mars rover solo: a LiDAR-inertial SLAM pipeline, 9-axis IMU integration, wheel odometry, and a custom EKF, all running reliably in GPS-denied outdoor terrain. The rover won the <strong>European Rover Challenge 2025</strong>.
 </p>
 
 <p class="about-text">
