@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="{{ "/assets/css/style.css?v=" | append: site.github.build_revision | relative_url }}">
   </head>
   <body>
-    <canvas id="lidar-canvas" aria-hidden="true"></canvas>
+    <canvas id="orbit-canvas" aria-hidden="true"></canvas>
     <div class="scan-overlay" aria-hidden="true"></div>
     <div class="bg-grid" aria-hidden="true"></div>
     <div class="bg-glow bg-glow--1" aria-hidden="true"></div>
@@ -90,111 +90,387 @@
     })();
     </script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" crossorigin="anonymous"></script>
     <script>
     (function() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-      var canvas = document.getElementById('lidar-canvas');
-      if (!canvas || typeof THREE === 'undefined') return;
+      var canvas = document.getElementById('orbit-canvas');
+      if (!canvas || !canvas.getContext) return;
+      var ctx = canvas.getContext('2d');
+      var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-      var renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: false });
-      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+      var D2R = Math.PI / 180, TAU = Math.PI * 2;
+      var FOCAL = 7, EARTH_RATE = 0.006, FIX_PERIOD = 3.2, ORBIT_STEPS = 96;
+      var TILT = 24 * D2R;
+      var RX_LAT = 46.52 * D2R, RX_LON = 6.63 * D2R;   // receiver: Lausanne
+      var RX = [Math.cos(RX_LAT) * Math.cos(RX_LON), Math.cos(RX_LAT) * Math.sin(RX_LON), Math.sin(RX_LAT)];
+      var PHI0 = RX_LON - 112 * D2R;
+      var MIN_ELEV = Math.sin(8 * D2R), FULL_ELEV = Math.sin(35 * D2R);
+      var CYAN = [34, 211, 238];
 
-      var scene = new THREE.Scene();
-      var camera = new THREE.PerspectiveCamera(50, 1, 0.1, 200);
-      camera.position.set(3, 12, 20);
-      camera.lookAt(0, -1, 0);
+      var mobile = window.innerWidth < 768;
+      var W = 0, H = 0, CX = 0, CY = 0, R = 1;
+      var cp = 1, sp = 0, ct = 1, st = 0;
 
-      function terrainY(x, z) {
-        return Math.sin(x * 0.26) * Math.cos(z * 0.31) * 2.1
-             + Math.sin(x * 0.58 + z * 0.43) * 0.82
-             + Math.cos(x * 0.14 + z * 0.19) * 0.58;
+      function rgba(c, a) { return 'rgba(' + c[0] + ',' + c[1] + ',' + c[2] + ',' + a.toFixed(3) + ')'; }
+      function smooth(a, b, x) { x = Math.max(0, Math.min(1, (x - a) / (b - a))); return x * x * (3 - 2 * x); }
+
+      function makeSprite(c) {
+        var s = document.createElement('canvas');
+        s.width = s.height = 64;
+        var g = s.getContext('2d');
+        var gr = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+        gr.addColorStop(0, 'rgba(255,255,255,1)');
+        gr.addColorStop(0.12, rgba(c, 0.9));
+        gr.addColorStop(0.4, rgba(c, 0.18));
+        gr.addColorStop(1, rgba(c, 0));
+        g.fillStyle = gr;
+        g.fillRect(0, 0, 64, 64);
+        return s;
       }
 
-      function hcol(y) {
-        var t = Math.max(0.0, Math.min(1.0, (y + 2.0) / 5.5));
-        var t2 = t * t;
-        return [
-          0.28 + t * 0.58 + t2 * 0.06,  // r: dark rust → orange → ochre
-          0.07 + t * 0.52 + t2 * 0.07,  // g: near-zero → warm amber
-          0.01 + t * 0.10 + t2 * 0.04   // b: near-zero throughout
-        ];
-      }
-
-      var isMobile = window.innerWidth < 768;
-      var NPTS = isMobile ? 6000 : 14000;
-      var pos = new Float32Array(NPTS * 3);
-      var col = new Float32Array(NPTS * 3);
-      var n = 0;
-
-      function ap(x, y, z, r, g, b) {
-        if (n >= NPTS) return;
-        var i = n++ * 3;
-        pos[i] = x; pos[i+1] = y; pos[i+2] = z;
-        col[i] = r; col[i+1] = g; col[i+2] = b;
-      }
-
-      // Ground terrain surface
-      var gCount = isMobile ? 5200 : 12500;
-      for (var i = 0; i < gCount; i++) {
-        var a = Math.random() * 6.2832;
-        var d = Math.sqrt(Math.random()) * 17;
-        var x = Math.cos(a) * d;
-        var z = Math.sin(a) * d;
-        var y = terrainY(x, z) + (Math.random() - 0.5) * 0.22;
-        var c = hcol(y);
-        ap(x, y, z, c[0], c[1], c[2]);
-      }
-
-      // Sparse distant returns — outer range ring
-      var dCount = isMobile ? 800 : 1500;
-      for (var k = 0; k < dCount; k++) {
-        var da = Math.random() * 6.2832;
-        var dd = 15.5 + Math.random() * 4.5;
-        var dx = Math.cos(da) * dd;
-        var dz = Math.sin(da) * dd;
-        var dy = terrainY(dx, dz) + Math.random() * 0.7;
-        var s = 0.1 + Math.random() * 0.32;
-        ap(dx, dy, dz, s * 0.38, s * 0.13, s * 0.02);
-      }
-
-      var geom = new THREE.BufferGeometry();
-      geom.setAttribute('position', new THREE.BufferAttribute(pos.slice(0, n * 3), 3));
-      geom.setAttribute('color',    new THREE.BufferAttribute(col.slice(0, n * 3), 3));
-
-      var mat = new THREE.PointsMaterial({
-        size: 0.10,
-        vertexColors: true,
-        transparent: true,
-        opacity: 0.68,
-        sizeAttenuation: true
+      // Walker-style shells: inclined LEO mesh + polar shell
+      var SHELLS = [
+        { inc: 53, r: 1.30, planes: mobile ? 4 : 6, sats: mobile ? 7 : 8, rate: 0.055, span: TAU, col: CYAN, links: true },
+        { inc: 87, r: 1.52, planes: mobile ? 2 : 3, sats: mobile ? 5 : 6, rate: 0.043, span: Math.PI, col: [167, 139, 250], links: false }
+      ];
+      var sats = [], orbits = [];
+      SHELLS.forEach(function(sh, si) {
+        sh.ci = Math.cos(sh.inc * D2R);
+        sh.si = Math.sin(sh.inc * D2R);
+        sh.sprite = makeSprite(sh.col);
+        sh.raan = [];
+        sh.first = sats.length;
+        for (var k = 0; k < sh.planes; k++) {
+          sh.raan.push(k * sh.span / sh.planes + si * 0.4);
+          var pts = [];
+          for (var m = 0; m <= ORBIT_STEPS; m++) pts.push({});
+          orbits.push({ sh: sh, k: k, pts: pts });
+          for (var j = 0; j < sh.sats; j++) {
+            sats.push({ sh: sh, k: k, u0: TAU * j / sh.sats + k * TAU / (sh.planes * sh.sats),
+                        seed: Math.random(), pos: [0, 0, 0], p: {}, w: 0 });
+          }
+        }
       });
 
-      var cloud = new THREE.Points(geom, mat);
-      scene.add(cloud);
+      var stars = [];
+      for (var i = 0; i < (mobile ? 90 : 180); i++) {
+        stars.push({ x: Math.random(), y: Math.random(), a: 0.12 + Math.random() * 0.45,
+                     s: Math.random() < 0.1 ? 1.6 : 1, f: 0.4 + Math.random() * 1.8, o: Math.random() * TAU });
+      }
+
+      // Fibonacci dot sphere for the globe surface
+      var globe = [], NG = mobile ? 650 : 1200, GA = Math.PI * (3 - Math.sqrt(5));
+      for (var n = 0; n < NG; n++) {
+        var gz = 1 - 2 * (n + 0.5) / NG, gr = Math.sqrt(1 - gz * gz);
+        globe.push([gr * Math.cos(n * GA), gr * Math.sin(n * GA), gz]);
+      }
+
+      function orbitPoint(sh, k, u, t, out) {
+        var O = sh.raan[k] - EARTH_RATE * t;
+        var cO = Math.cos(O), sO = Math.sin(O), cu = Math.cos(u) * sh.r, su = Math.sin(u) * sh.r;
+        out[0] = cO * cu - sO * su * sh.ci;
+        out[1] = sO * cu + cO * su * sh.ci;
+        out[2] = su * sh.si;
+        return out;
+      }
+
+      // Earth-fixed frame -> screen: yaw by -phi, tilt the pole toward the viewer, mild perspective
+      function proj(x, y, z, o) {
+        var x1 = x * cp + y * sp;
+        var y1 = -x * sp + y * cp;
+        var d = y1 * ct + z * st;
+        var u = -y1 * st + z * ct;
+        var k = R * FOCAL / (FOCAL - d);
+        o.x = CX + x1 * k;
+        o.y = CY - u * k;
+        o.d = d;
+        o.occ = d < 0 && x1 * x1 + u * u < 1;
+        return o;
+      }
+
+      var tmp = [0, 0, 0], q = {}, rx = {};
+      var sigma = 0.4, lastFix = -10;
+
+      function drawOrbits(t, front) {
+        ctx.lineWidth = 1;
+        ctx.setLineDash([2, 5]);
+        ctx.lineDashOffset = -t * 6;
+        orbits.forEach(function(o) {
+          ctx.strokeStyle = rgba(o.sh.col, front ? 0.42 : 0.12);
+          ctx.beginPath();
+          var pen = false;
+          o.pts.forEach(function(p) {
+            if (!p.occ && (p.d >= 0) === front) {
+              if (pen) ctx.lineTo(p.x, p.y); else ctx.moveTo(p.x, p.y);
+              pen = true;
+            } else {
+              pen = false;
+            }
+          });
+          ctx.stroke();
+        });
+        ctx.setLineDash([]);
+      }
+
+      // Cross-plane inter-satellite links of the inclined shell
+      function drawLinks(t, front) {
+        var sh = SHELLS[0];
+        ctx.lineWidth = 0.8;
+        ctx.setLineDash([3, 6]);
+        ctx.lineDashOffset = t * 10;
+        ctx.strokeStyle = rgba(CYAN, front ? 0.15 : 0.05);
+        ctx.beginPath();
+        for (var k = 0; k < sh.planes; k++) {
+          for (var j = 0; j < sh.sats; j++) {
+            var a = sats[sh.first + k * sh.sats + j].p;
+            var b = sats[sh.first + ((k + 1) % sh.planes) * sh.sats + j].p;
+            if (a.occ || b.occ || (a.d + b.d >= 0) !== front) continue;
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+          }
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      function drawGlobe() {
+        var g = ctx.createRadialGradient(CX - R * 0.35, CY - R * 0.4, R * 0.1, CX, CY, R);
+        g.addColorStop(0, 'rgba(18,40,72,0.55)');
+        g.addColorStop(1, 'rgba(5,8,20,0.92)');
+        ctx.fillStyle = g;
+        ctx.beginPath();
+        ctx.arc(CX, CY, R, 0, TAU);
+        ctx.fill();
+        ctx.strokeStyle = 'rgba(34,211,238,0.22)';
+        ctx.lineWidth = 1;
+        ctx.stroke();
+
+        var buckets = [new Path2D(), new Path2D(), new Path2D(), new Path2D()];
+        for (var i = 0; i < globe.length; i++) {
+          var p = proj(globe[i][0], globe[i][1], globe[i][2], q);
+          if (p.d < 0.03) continue;
+          buckets[Math.min(3, p.d * 4 | 0)].rect(p.x, p.y, 1.5, 1.5);
+        }
+        [0.1, 0.2, 0.32, 0.48].forEach(function(a, b) {
+          ctx.fillStyle = rgba([125, 211, 252], a);
+          ctx.fill(buckets[b]);
+        });
+
+        // dotted equator, front half only
+        ctx.setLineDash([1, 4]);
+        ctx.strokeStyle = 'rgba(96,165,250,0.38)';
+        ctx.beginPath();
+        var pen = false;
+        for (var m = 0; m <= 120; m++) {
+          var e = proj(Math.cos(m / 120 * TAU), Math.sin(m / 120 * TAU), 0, q);
+          if (e.d > 0) {
+            if (pen) ctx.lineTo(e.x, e.y); else ctx.moveTo(e.x, e.y);
+            pen = true;
+          } else {
+            pen = false;
+          }
+        }
+        ctx.stroke();
+        ctx.setLineDash([]);
+      }
+
+      // Ranging rays: satellites above the receiver's horizon, with signal pulses travelling down
+      function drawRays(t, boost) {
+        ctx.lineWidth = 1;
+        sats.forEach(function(s) {
+          if (s.w < 0.01) return;
+          var p = s.p;
+          var g = ctx.createLinearGradient(rx.x, rx.y, p.x, p.y);
+          g.addColorStop(0, rgba(CYAN, 0.06 * s.w));
+          g.addColorStop(1, rgba(s.sh.col, Math.min(1, 0.4 * s.w * boost)));
+          ctx.strokeStyle = g;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(rx.x, rx.y);
+          ctx.stroke();
+
+          var f = (t * 0.55 + s.seed) % 1, f0 = Math.max(0, f - 0.07);
+          ctx.strokeStyle = rgba([224, 242, 254], 0.85 * s.w);
+          ctx.lineWidth = 1.4;
+          ctx.beginPath();
+          ctx.moveTo(p.x + (rx.x - p.x) * f0, p.y + (rx.y - p.y) * f0);
+          ctx.lineTo(p.x + (rx.x - p.x) * f, p.y + (rx.y - p.y) * f);
+          ctx.stroke();
+          ctx.lineWidth = 1;
+        });
+      }
+
+      function drawSats(t, front) {
+        sats.forEach(function(s) {
+          var p = s.p;
+          if (p.occ || (p.d >= 0) !== front) return;
+          var sh = s.sh, u = s.u0 + sh.rate * t;
+          var a = front ? 1 : 0.35;
+
+          // short fading trail along the orbit
+          var prevX = p.x, prevY = p.y;
+          for (var i = 1; i <= 3; i++) {
+            var o = orbitPoint(sh, s.k, u - i * 0.045, t, tmp);
+            var tp = proj(o[0], o[1], o[2], q);
+            if (!tp.occ) {
+              ctx.strokeStyle = rgba(sh.col, a * (0.45 - i * 0.12));
+              ctx.lineWidth = 1.5;
+              ctx.beginPath();
+              ctx.moveTo(prevX, prevY);
+              ctx.lineTo(tp.x, tp.y);
+              ctx.stroke();
+            }
+            prevX = tp.x;
+            prevY = tp.y;
+          }
+
+          var size = (front ? 16 : 11) * FOCAL / (FOCAL - p.d);
+          ctx.globalAlpha = a;
+          ctx.drawImage(sh.sprite, p.x - size / 2, p.y - size / 2, size, size);
+          ctx.globalAlpha = 1;
+
+          if (s.w > 0.05) {
+            ctx.strokeStyle = rgba(sh.col, 0.7 * s.w);
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 6.5, 0, TAU);
+            ctx.stroke();
+          }
+        });
+      }
+
+      function drawReceiver(t, age, tracked) {
+        if (age < 1.4) {
+          ctx.strokeStyle = rgba(CYAN, 0.5 * (1 - age / 1.4));
+          ctx.lineWidth = 1;
+          ctx.beginPath();
+          ctx.arc(rx.x, rx.y, 4 + age * 42, 0, TAU);
+          ctx.stroke();
+        }
+
+        // position covariance: grows between fixes, shrinks at each fix
+        ctx.setLineDash([2, 3]);
+        ctx.strokeStyle = 'rgba(34,211,238,0.5)';
+        ctx.beginPath();
+        ctx.ellipse(rx.x, rx.y, 5 + sigma * 26, 3 + sigma * 15, -0.5 + 0.25 * Math.sin(t * 0.3), 0, TAU);
+        ctx.stroke();
+        ctx.setLineDash([]);
+
+        ctx.drawImage(SHELLS[0].sprite, rx.x - 12, rx.y - 12, 24, 24);
+        ctx.strokeStyle = 'rgba(224,242,254,0.8)';
+        ctx.beginPath();
+        ctx.moveTo(rx.x - 9, rx.y); ctx.lineTo(rx.x - 4, rx.y);
+        ctx.moveTo(rx.x + 4, rx.y); ctx.lineTo(rx.x + 9, rx.y);
+        ctx.moveTo(rx.x, rx.y - 9); ctx.lineTo(rx.x, rx.y - 4);
+        ctx.moveTo(rx.x, rx.y + 4); ctx.lineTo(rx.x, rx.y + 9);
+        ctx.stroke();
+
+        if (mobile) return;
+        ctx.strokeStyle = 'rgba(148,163,184,0.35)';
+        ctx.beginPath();
+        ctx.moveTo(rx.x - 10, rx.y - 10);
+        ctx.lineTo(rx.x - 26, rx.y - 26);
+        ctx.lineTo(rx.x - 46, rx.y - 26);
+        ctx.stroke();
+        ctx.font = '500 10px "JetBrains Mono", monospace';
+        ctx.textAlign = 'right';
+        ctx.fillStyle = 'rgba(148,163,184,0.7)';
+        ctx.fillText('RX  46.52°N  6.63°E', rx.x - 50, rx.y - 36);
+        ctx.fillStyle = 'rgba(34,211,238,0.75)';
+        ctx.fillText('PVT · ' + tracked + ' SV · σ ' + sigma.toFixed(2) + ' m', rx.x - 50, rx.y - 22);
+        ctx.textAlign = 'left';
+      }
+
+      function frame(t, dt) {
+        var phi = PHI0 + 0.14 * Math.sin(t * 0.035);
+        var tilt = TILT + 0.04 * Math.sin(t * 0.027);
+        cp = Math.cos(phi); sp = Math.sin(phi); ct = Math.cos(tilt); st = Math.sin(tilt);
+
+        if (t - lastFix > FIX_PERIOD) {
+          lastFix = t;
+          sigma = 0.22 + Math.random() * 0.18;
+        } else {
+          sigma += dt * 0.12;
+        }
+        var age = t - lastFix;
+
+        ctx.clearRect(0, 0, W, H);
+
+        for (var i = 0; i < stars.length; i++) {
+          var s = stars[i];
+          ctx.fillStyle = rgba([203, 213, 225], s.a * (0.6 + 0.4 * Math.sin(t * s.f + s.o)));
+          ctx.fillRect(s.x * W, s.y * H, s.s, s.s);
+        }
+
+        var halo = ctx.createRadialGradient(CX, CY, R * 0.92, CX, CY, R * 1.35);
+        halo.addColorStop(0, 'rgba(34,211,238,0.10)');
+        halo.addColorStop(0.35, 'rgba(59,130,246,0.04)');
+        halo.addColorStop(1, 'rgba(59,130,246,0)');
+        ctx.fillStyle = halo;
+        ctx.beginPath();
+        ctx.arc(CX, CY, R * 1.35, 0, TAU);
+        ctx.fill();
+
+        orbits.forEach(function(o) {
+          for (var m = 0; m <= ORBIT_STEPS; m++) {
+            orbitPoint(o.sh, o.k, m / ORBIT_STEPS * TAU, t, tmp);
+            proj(tmp[0], tmp[1], tmp[2], o.pts[m]);
+          }
+        });
+
+        proj(RX[0], RX[1], RX[2], rx);
+        var tracked = 0;
+        sats.forEach(function(s) {
+          var sh = s.sh, v = orbitPoint(sh, s.k, s.u0 + sh.rate * t, t, s.pos);
+          proj(v[0], v[1], v[2], s.p);
+          var dx = v[0] - RX[0], dy = v[1] - RX[1], dz = v[2] - RX[2];
+          var elev = (dx * RX[0] + dy * RX[1] + dz * RX[2]) / Math.sqrt(dx * dx + dy * dy + dz * dz);
+          s.w = s.p.occ ? 0 : smooth(MIN_ELEV, FULL_ELEV, elev);
+          if (s.w > 0.25) tracked++;
+        });
+
+        drawOrbits(t, false);
+        drawLinks(t, false);
+        drawSats(t, false);
+        drawGlobe();
+        drawOrbits(t, true);
+        drawLinks(t, true);
+        drawRays(t, 1 + 1.2 * Math.max(0, 1 - age / 0.6));
+        drawSats(t, true);
+        drawReceiver(t, age, tracked);
+      }
+
+      var t = 12, last = performance.now(), paused = false;
 
       function resize() {
         var w = window.innerWidth, h = window.innerHeight;
-        renderer.setSize(w, h);
-        camera.aspect = w / h;
-        camera.updateProjectionMatrix();
+        if (w === W && Math.abs(h - H) < 120) return;   // ignore mobile URL-bar jitter
+        W = w; H = h;
+        var dpr = Math.min(window.devicePixelRatio || 1, 1.75);
+        canvas.width = W * dpr | 0;
+        canvas.height = H * dpr | 0;
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        if (W < 768) { R = W * 0.44; CX = W * 0.62; CY = H * 0.8; }
+        else { R = Math.min(W, H) * 0.33; CX = W * 0.74; CY = H * 0.6; }
+        if (reduced) frame(t, 0);
       }
       resize();
       window.addEventListener('resize', resize);
+      if (reduced) return;
 
-      var t = 0;
-      var paused = false;
-      document.addEventListener('visibilitychange', function() { paused = document.hidden; });
+      document.addEventListener('visibilitychange', function() {
+        paused = document.hidden;
+        last = performance.now();
+      });
 
-      function tick() {
+      function tick(now) {
         requestAnimationFrame(tick);
         if (paused) return;
-        t += 0.0022;
-        cloud.rotation.y = t;
-        cloud.position.y = Math.sin(t * 0.38) * 0.45;
-        renderer.render(scene, camera);
+        var dt = Math.min((now - last) / 1000, 0.05);
+        last = now;
+        t += dt;
+        frame(t, dt);
       }
-      tick();
+      requestAnimationFrame(tick);
     })();
     </script>
   </body>

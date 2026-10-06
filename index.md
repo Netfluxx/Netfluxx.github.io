@@ -92,7 +92,7 @@ Led the **autonomous navigation subsystem** — localization, SLAM and path plan
 <span class="project-tag">&#9733; ERC 2026 Winner</span>
 
 ### EPFL Xplore — Software Lead of the ERC 2026 Rover
-*EPFL Xplore | Software Systems Engineer | Sep 2025 — Ongoing*
+*EPFL Xplore | Software Systems Engineer | Sep 2025 — August 2026*
 
 Led the software of the rover that won the **European Rover Challenge 2026**, coordinating a team of **15 engineers**. Back-to-back win after ERC 2025.
 
