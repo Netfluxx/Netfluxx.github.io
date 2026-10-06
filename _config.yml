@@ -1,6 +1,6 @@
 theme: jekyll-theme-minimal
 title: Arno Laurie
-description: SLAM & State Estimation — Robotics MSc EPFL | LiDAR-Inertial SLAM, EKF/UKF, GTSAM, ROS2 | ERC 2025 Winner
+description: State Estimation & Navigation — Robotics MSc EPFL | Factor Graphs, SLAM, EKF/UKF, GNSS/PNT, ROS2 | ERC 2025 & 2026 Winner
 
 defaults:
   - scope:

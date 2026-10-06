@@ -5,10 +5,10 @@ layout: default
 <div class="hero">
   <div class="hero__text">
     <h1>Arno Laurie</h1>
-    <p class="hero__subtitle">SLAM & State Estimation</p>
-    <p class="hero__sub2">Robotics MSc<span class="sep">·</span>EPFL<span class="sep">·</span>ERC 2025 Winner</p>
+    <p class="hero__subtitle">State Estimation & Navigation</p>
+    <p class="hero__sub2">Robotics MSc<span class="sep">·</span>EPFL<span class="sep">·</span>ERC 2025 & 2026 Winner</p>
     <div class="hero__badges">
-      <a href="mailto:arno.laurie@epfl.ch" class="hero__badge">
+      <a href="mailto:arno.laurie.pro@gmail.com" class="hero__badge">
         <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
         Email
       </a>
@@ -34,15 +34,15 @@ layout: default
 ## About Me
 
 <p class="about-text">
-I deployed the full autonomous navigation stack for EPFL Xplore's Mars rover solo: a LiDAR-inertial SLAM pipeline, 9-axis IMU integration, wheel odometry, and a custom EKF, all running reliably in GPS-denied outdoor terrain. The rover won the <strong>European Rover Challenge 2025</strong>.
+I am a Robotics MSc student at EPFL specializing in <strong>state estimation</strong>. I build real-time localization systems: factor-graph optimization, Kalman filtering, SLAM and multi-sensor fusion for GNSS-denied platforms.
 </p>
 
 <p class="about-text">
-I am now building a custom 3D SLAM system from scratch in C++ using <strong>GTSAM factor-graph optimization</strong> — LiDAR-inertial fusion, place recognition, and loop closure. I have also tuned production-grade systems (LIO-SAM, FAST-LIO2, GLIM) on real hardware, implemented EKFs and UKFs across multiple platforms, and built a custom 6-layer AHRS PCB with full firmware running the <strong>VqF</strong> attitude filter.
+As a <strong>Navigation Engineer at VLRX</strong>, I design a factor-graph localization solver for a Low Earth Orbit positioning, navigation and timing (PNT) system. It fuses satellite measurements with IMU, VIO, magnetometer and barometer data. Before that, I developed the AHRS firmware for a custom PCB at <strong>coprod SA</strong>.
 </p>
 
 <p class="about-text">
-My focus: <strong>robust localization and state estimation for robots operating in GPS-denied, unstructured environments</strong>.
+At EPFL Xplore, I led the navigation subsystem of the rover that won the <strong>European Rover Challenge 2025</strong>. I then led the software of the rover that won <strong>ERC 2026</strong>, coordinating a team of 15 engineers. My experience ranges from embedded C++ firmware to full ROS&nbsp;2 navigation stacks.
 </p>
 
 </div>
@@ -64,12 +64,12 @@ My focus: <strong>robust localization and state estimation for robots operating 
 
 <img src="ERC_win.jpg" alt="ERC 2025 Winning Rover">
 
-Deployed the **full autonomous navigation stack solo** for a 4-wheeled Mars rover competing in the European Rover Challenge 2025 — GPS-denied outdoor terrain, no fallback.
+Led the **autonomous navigation subsystem** — localization, SLAM and path planning — of a 4-wheeled Mars rover competing in the European Rover Challenge 2025. GPS-denied outdoor terrain, no fallback.
 
 **SLAM & Localization:**
 - LiDAR-inertial SLAM pipeline (Ouster 3D LiDAR + 9-axis IMU)
-- Custom Extended Kalman Filter fusing wheel odometry, IMU, and LiDAR-inertial odometry
-- Global pose corrections via triangulation and trilateration with convex optimization (CVXPY/ECOS)
+- Custom Extended Kalman Filter with a double-Ackermann kinematic model, fusing wheel odometry, IMU, and LiDAR-inertial odometry
+- Global pose corrections via triangulation, trilateration and computer vision, solved with convex optimization (CVXPY/ECOS)
 - Sub-15 cm accuracy in GPS-denied outdoor environments
 - Production SLAM systems tuned on hardware: **LIO-SAM**, **FAST-LIO2**, **GLIM**
 
@@ -89,41 +89,42 @@ Deployed the **full autonomous navigation stack solo** for a 4-wheeled Mars rove
 
 <div class="project-card project-card--featured reveal" markdown="1">
 
-<span class="project-tag">&#9733; Ongoing</span>
+<span class="project-tag">&#9733; ERC 2026 Winner</span>
 
-### Custom 3D SLAM System — GTSAM Factor Graphs
-*Personal Project | Fall 2025 — Ongoing*
+### EPFL Xplore — Software Lead of the ERC 2026 Rover
+*EPFL Xplore | Software Systems Engineer | Sep 2025 — Ongoing*
 
-Building a complete LiDAR SLAM system from scratch in C++ using **GTSAM factor-graph optimization** as the back-end. No black-box libraries — every component designed and implemented from the ground up.
+Led the software of the rover that won the **European Rover Challenge 2026**, coordinating a team of **15 engineers**. Back-to-back win after ERC 2025.
 
-**Architecture:**
-- **Front-end:** LiDAR scan-to-map matching for incremental odometry; IMU preintegration for inter-frame constraint generation
-- **Back-end:** GTSAM incremental smoothing (iSAM2) for real-time factor graph optimization
-- **Place Recognition:** descriptor-based loop closure detection
-- **Back-end trigger:** pose-graph optimization on detected loop closures
-
-**Benchmarked against production systems** (LIO-SAM, FAST-LIO2, GLIM) on the same hardware and datasets.
+**System architecture (end-to-end owner):**
+- Autonomous navigation with ROS2 and Nav2
+- Robotic arm control with MoveIt
+- Wireless links with Mikrotik routers and software-defined radio
+- Perception, planning and control integrated on NVIDIA Jetson, fusing IMU, LiDAR and RGB camera data
+- Full software stack containerized with Docker for reproducible field deployment
 
 **Technologies:**
-`C++` `GTSAM` `ROS2` `PCL` `Eigen` `LiDAR`
+`C++` `Python` `ROS2` `Nav2` `MoveIt` `OpenCV` `Docker` `maxon EPOS`
 
 </div>
 
 <div class="project-card project-card--featured reveal" markdown="1">
 
-<span class="project-tag">&#9733; Hardware + Firmware</span>
+<span class="project-tag">&#9733; SLAM</span>
 
-### Custom 6-Layer AHRS PCB & Drone Visual-Inertial Odometry
-*Personal Project | Fall 2025 — Ongoing*
+### Real-Time 3D SLAM with Gaussian Mixture Models
+*Spring 2026*
 
-**AHRS Hardware:**
-Designed and built a custom **6-layer PCB** in KiCad implementing a full AHRS (Attitude and Heading Reference System). Firmware runs the **VqF (Versatile Quaternion-based Filter)** algorithm — a state-of-the-art sensor fusion filter for robust attitude estimation from 9-axis IMU data (accelerometer + gyroscope + magnetometer).
+A real-time 3D SLAM stack in C++ built on **GTSAM factor-graph optimization**, fusing LiDAR point clouds and IMU data. The map is a **Gaussian Mixture Model**, a compact representation of the environment.
 
-**Visual-Inertial Odometry:**
-The AHRS PCB serves as the IMU unit for an **FPV drone VIO** pipeline — camera + IMU tight coupling for GPS-denied state estimation. Implements EKF-based fusion of visual feature tracks and inertial measurements.
+**Architecture:**
+- **Front-end:** point-cloud registration for incremental odometry; IMU preintegration for inter-frame constraints
+- **Back-end:** GTSAM factor-graph optimization in real time
+- **Place recognition:** loop closure detection and pose-graph correction
+- **Map:** Gaussian Mixture Model map instead of a dense point cloud
 
 **Technologies:**
-`KiCad` `C` `STM32` `VqF` `OpenCV` `EKF/UKF` `ROS2`
+`C++` `GTSAM` `PCL` `Eigen` `ROS2` `LiDAR` `IMU`
 
 </div>
 
@@ -131,23 +132,22 @@ The AHRS PCB serves as the IMU unit for an **FPV drone VIO** pipeline — camera
 
 <div class="project-card reveal" markdown="1">
 
-### EPFL Xplore — Current Rover (Software Systems Engineer)
-*Sep 2025 — Ongoing*
+### Robust and Non-Linear MPC for Rocket Landing
+*Academic Project | Fall 2025*
 
-Leading end-to-end software architecture for the 2025/26 competition rover: autonomous navigation (ROS2/Nav2), robotic arm control (MoveIt), real-time wireless communication, and sensor fusion (IMU, LiDAR, cameras). Coordinating hardware-software integration across a multidisciplinary team on NVIDIA Jetson platforms.
+Designed and tuned robust and non-linear model predictive controllers for a 6-DOF rocket landing.
 
 **Technologies:**
-`C++` `Python` `ROS2` `MoveIt` `Docker` `maxon EPOS`
+`Python` `CasADi` `MPC` `Optimization`
 
 </div>
-
 
 <div class="project-card reveal" markdown="1">
 
 ### STM32 RTOS Autonomous Mobile Robot
 *Academic Project | Spring 2025*
 
-Real-time autonomous navigation on the e-puck 2 platform using ChibiOS RTOS. Extended Kalman Filter for localization, real-time obstacle detection and mapping, efficient RTOS task scheduling, sensor fusion with IMU and proximity sensors.
+Real-time autonomous navigation on the e-puck2 platform using ChibiOS RTOS. Extended Kalman Filter for localization, real-time obstacle detection and mapping, efficient RTOS task scheduling, sensor fusion with IMU and proximity sensors.
 
 **Technologies:**
 `STM32` `ChibiOS` `C` `EKF` `Embedded Systems`
@@ -180,10 +180,10 @@ Autonomous navigation with EKF localization and ArUco tag triangulation & trilat
 
 <div class="project-card reveal" markdown="1">
 
-### Direction of Arrival — LibreSDR
+### Angle-of-Arrival RF Localization — LibreSDR
 *Personal Project | Fall 2025*
 
-MUSIC and Root-MUSIC algorithm implementations for direction-of-arrival estimation on the LibreSDR platform.
+Angle-of-arrival radio direction finding with software-defined radio hardware. MUSIC and Root-MUSIC implementations on the LibreSDR platform.
 
 <img src="libresdr.jpg" alt="LibreSDR DoA" style="max-width: 360px;">
 
@@ -316,6 +316,22 @@ MUSIC and Root-MUSIC algorithm implementations for direction-of-arrival estimati
 </div>
 </div>
 
+<div markdown="1">
+
+### Toolbox
+
+**State estimation:** `EKF` `UKF` `Factor graphs (GTSAM)` `SLAM` `Multi-sensor fusion` `GNSS / PNT`
+
+**Robotics:** `ROS2` `Nav2` `MoveIt` `Gazebo` `PCL` `MPC (CasADi)`
+
+**Software:** `C++` `Python` `Linux` `Docker` `Git` `OpenCV` `MATLAB / Simulink`
+
+**Embedded & RF:** `STM32` `ChibiOS` `FreeRTOS` `Software-defined radio` `KiCad` `LTspice`
+
+**CAD:** `Fusion 360`
+
+</div>
+
 </div>
 
 </div>
@@ -328,12 +344,34 @@ MUSIC and Root-MUSIC algorithm implementations for direction-of-arrival estimati
 
 <div class="exp-item reveal" markdown="1">
 
+### VLRX Sàrl — Navigation Engineer, LEO Positioning, Navigation and Timing
+<div class="exp-meta">Sep 2026 — Ongoing <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Designing a factor-graph localization solver for a Low Earth Orbit PNT ranging system. The solver fuses satellite measurements with IMU, VIO, magnetometer and barometer data, and estimates position, velocity and receiver clock bias in ECEF/WGS84. Wrote the engineering specification for the solver.
+
+`C++` `Factor graphs` `Sensor fusion`
+
+</div>
+
+<div class="exp-item reveal" markdown="1">
+
+### coprod SA — Firmware Engineer, Attitude and Heading Reference System
+<div class="exp-meta">Spring 2026 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+
+Developed the AHRS firmware for a custom PCB. Implemented redundant IMU fusion, sensor calibration, and magnetic disturbance rejection for reliable heading estimation.
+
+`C++` `Embedded systems`
+
+</div>
+
+<div class="exp-item reveal" markdown="1">
+
 ### EPFL Xplore — Software Systems Engineer
 <div class="exp-meta">Sep 2025 — Ongoing <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
 
-Leading end-to-end software architecture of the 2025/26 competition rover: autonomous navigation (ROS2/Nav2), robotic arm control (MoveIt), and real-time wireless communication. Coordinating perception, planning, and control integration across a multidisciplinary team on Jetson platforms. Containerized deployment with Docker; sensor fusion across IMU, LiDAR, and cameras.
+Led the software of the rover that won the European Rover Challenge 2026, coordinating a team of 15 engineers. Own the end-to-end architecture: autonomous navigation (ROS2/Nav2), arm control (MoveIt), and wireless links (Mikrotik routers and SDR). Integrated perception, planning and control on NVIDIA Jetson, fusing IMU, LiDAR and RGB camera data. Containerized the full software stack with Docker for reproducible field deployment. **Won 1st place at the European Rover Challenge 2026.**
 
-`C++` `Python` `ROS2` `Docker` `Jetson` `maxon EPOS`
+`C++` `Python` `ROS2` `Nav2` `MoveIt` `OpenCV` `Docker` `maxon EPOS`
 
 </div>
 
@@ -342,18 +380,18 @@ Leading end-to-end software architecture of the 2025/26 competition rover: auton
 ### EPFL Xplore — Team Leader, Autonomous Navigation
 <div class="exp-meta">Sep 2024 — Aug 2025 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
 
-Led the development of the full navigation subsystem for the ERC 2025 rover. Solo deployment of the complete SLAM and navigation stack — LiDAR-inertial odometry, 9-axis IMU integration, wheel odometry, and custom EKF, running in GPS-denied outdoor terrain. **Won 1st place at the European Rover Challenge 2025.**
+Led the navigation subsystem of the ERC 2025 rover: localization, SLAM and path planning. Developed a custom Extended Kalman Filter with a double-Ackermann kinematic model. Integrated LiDAR-inertial SLAM for mapping and localization on Mars-analogue terrain. Localized the rover with triangulation, trilateration and computer vision. Coordinated hardware–software integration with the mechanical and electrical teams. **Won 1st place at the European Rover Challenge 2025.**
 
-`C++` `Python` `ROS2` `OpenCV` `Docker` `Gazebo` `Arduino`
+`C++` `Python` `ROS2` `Nav2` `OpenCV` `Gazebo` `Docker` `Arduino`
 
 </div>
 
 <div class="exp-item reveal" markdown="1">
 
 ### EPFL Xplore — Software Engineer
-<div class="exp-meta">Sep 2023 — Sep 2024 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
+<div class="exp-meta">Sep 2023 — Aug 2024 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
 
-Designed and implemented ROS2-based manual and autonomous navigation for an outdoor rover. 2D LiDAR SLAM integration, low-level PID motor controller on Arduino with custom wheel odometry. Collaborated with mechanical and electrical engineers on system integration.
+Designed ROS2-based manual and autonomous navigation for outdoor rover operation. Implemented 2D LiDAR SLAM. Built a low-level PID motor controller on Arduino with custom wheel odometry.
 
 `C++` `Python` `ROS2` `Arduino`
 
@@ -364,7 +402,7 @@ Designed and implemented ROS2-based manual and autonomous navigation for an outd
 ### ETML — Machining Intern
 <div class="exp-meta">August 2024 <span class="sep">·</span> <span class="loc">Lausanne, Switzerland</span></div>
 
-Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, and brazing.
+Manual metal machining: turning, milling, drilling, tapping, and brazing.
 
 </div>
 
@@ -382,11 +420,14 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
 *2025 — Ongoing*
 
 **Relevant Coursework:**
-- Manipulation & Computer Vision
-- Autonomous Navigation
 - Sensor Fusion and State Estimation
-- Machine Learning & Convex Optimization
-- Multivariable and Non-Linear Control, Model Predictive Control
+- Autonomous Navigation
+- Computer Vision
+- Convex Optimization
+- Model Predictive Control
+- Multivariable and Non-Linear Control
+- Manipulation
+- Machine Learning
 
 </div>
 
@@ -396,18 +437,22 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
 *GPA: **5.38 / 6** | 2022 — 2025*
 
 **Relevant Coursework:**
-- Electronics I & II, OOP, Digital System Design
-- AVR Microcontrollers & Embedded Systems
-- Control Systems, Signals and Systems
-- Real and Complex Analysis, Linear Algebra
-- Introduction to PCB Design & Manufacturing
+- Embedded Systems
+- Control Systems
+- Signals and Systems
+- Digital System Design
+- Electronics I & II
+- PCB Design
+- Probability and Statistics
 
 </div>
 
 <div class="education-item" markdown="1">
 
 ### École Européenne Luxembourg II
-*Baccalauréat Scientifique | **95.02 / 100** | 2022*
+*European Baccalaureate (Computer Science, Mathematics, Physics, Chemistry) | **95.02 / 100** | 2022*
+
+Bertrange, Luxembourg
 - Secretary of the BAC Committee · Yearbook Committee
 
 </div>
@@ -418,7 +463,15 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
 
 <div class="section reveal" markdown="1">
 
-## Awards
+## Awards & Certificates
+
+<div class="award-item">
+  <div class="award-icon">🏆</div>
+  <div>
+    <h3>European Rover Challenge 2026 — 1st Place</h3>
+    <p>Led the software of the EPFL Xplore rover and coordinated a team of 15 engineers. Back-to-back win after ERC 2025.</p>
+  </div>
+</div>
 
 <div class="award-item">
   <div class="award-icon">🏆</div>
@@ -436,6 +489,14 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
   </div>
 </div>
 
+<div class="award-item">
+  <div class="award-icon">📻</div>
+  <div>
+    <h3>HB9 Amateur Radio Licence</h3>
+    <p>Swiss amateur radio licence.</p>
+  </div>
+</div>
+
 </div>
 
 ---
@@ -446,7 +507,7 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
 
 <div class="lang-grid">
   <div class="lang-item">🇫🇷 <strong>French</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Native</span></div>
-  <div class="lang-item">🇬🇧 <strong>English</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Fluent — TOEFL 112/120</span></div>
+  <div class="lang-item">🇬🇧 <strong>English</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Fluent — TOEFL iBT 112/120</span></div>
   <div class="lang-item">🇩🇪 <strong>German</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
   <div class="lang-item">🇳🇱 <strong>Dutch</strong><br><span style="color: var(--text-muted); font-size: 0.85rem;">Basic</span></div>
 </div>
@@ -480,7 +541,7 @@ Hands-on manual metal machining: turning, milling, drilling, sawing, tapping, an
 ### ERC 2025 — LiDAR-Inertial SLAM Navigation Stack
 
 #### Problem
-Design and deploy a complete autonomous navigation system for a Mars rover operating in GPS-denied, rough outdoor terrain — with no fallback localization source.
+Design and deploy the autonomous navigation system for a Mars rover operating in GPS-denied, rough outdoor terrain — with no fallback localization source.
 
 <img src="nav2_irl.jpg" alt="EPFL Xplore Rover Navigation in the Field">
 
@@ -512,7 +573,7 @@ Design and deploy a complete autonomous navigation system for a Mars rover opera
 |--------|--------|
 | Competition | European Rover Challenge 2025 — **1st Place** |
 | Localization accuracy | Sub 15 cm in GPS-denied outdoor terrain |
-| Deployment | Solo, full stack on NVIDIA Jetson in Docker |
+| Deployment | Full stack on NVIDIA Jetson in Docker |
 
 <img src="convex_landmark.jpg" alt="Triangulation+Trilateration — SOCP Formulation" style="max-width: 700px;">
 
@@ -529,9 +590,9 @@ Design and deploy a complete autonomous navigation system for a Mars rover opera
 
 ## Contact
 
-Open to internship opportunities, research collaborations, and robotics projects — particularly in SLAM, state estimation, and autonomous systems.
+Open to research collaborations and opportunities in state estimation, navigation, and autonomous systems.
 
-📧 **Email:** [arno.laurie@epfl.ch](mailto:arno.laurie@epfl.ch)
+📧 **Email:** [arno.laurie.pro@gmail.com](mailto:arno.laurie.pro@gmail.com)
 
 🔗 **LinkedIn:** [linkedin.com/in/arno-laurie](https://ch.linkedin.com/in/arno-laurie-816a73229)
 
@@ -543,4 +604,4 @@ Open to internship opportunities, research collaborations, and robotics projects
 
 ---
 
-*Last updated: June 2026*
+*Last updated: October 2026*
